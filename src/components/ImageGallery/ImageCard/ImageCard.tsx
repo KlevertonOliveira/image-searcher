@@ -7,14 +7,17 @@ type ImageCardProps = {
 
 function ImageCard({ image }: ImageCardProps) {
   return (
-    <div className='rounded-lg w-full h-full'>
+    <div className='rounded-lg w-full h-[250px]'>
       <div className="rounded-lg shadow-lg bg-white relative h-full">
         <a href="#!">
-          <img className="rounded-lg overflow-hidden" src={image.url} alt={image.tags} />
+          <img className="rounded-lg overflow-hidden h-full w-full object-cover" src={image.url} alt={image.tags} />
         </a>
         <div className='absolute bottom-0 right-0 text-white w-full p-3 bg-[rgba(0,0,0,0.7)] rounded flex justify-between'>
           <div className='flex flex-col gap-1'>
-            <p className='text-sm'>{image.tags}</p>
+            <p className='text-sm'>
+              {image.tags.substring(0, 30)}
+              {image.tags.length > 30 && '...'}
+            </p>
             <p className='text-xs'>By: {image.user}</p>
           </div>
           <button className='flex items-center hover:opacity-70 transition-opacity'>

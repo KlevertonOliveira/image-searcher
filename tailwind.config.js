@@ -2,7 +2,12 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "accent-light-hover": "#70a1c1",
+        "accent-light": "#6096BA",
+      },
+    },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms"), require("tailwind-scrollbar")],
 };

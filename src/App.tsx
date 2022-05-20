@@ -1,28 +1,27 @@
 import { useEffect, useState } from 'react';
-import AmountSelector from './components/AmountSelector';
 import EmptySearch from './components/EmptySearch';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import ImageGallery from './components/ImageGallery';
 import ImageTypeSelector from './components/ImageTypeSelector';
-import SortSelector from './components/SortSelector';
+import OrderSelector from './components/OrderSelector';
+import Pagination from './components/Pagination';
 import { getImageListData } from './services/getImageListData';
-import { AmountOptions } from './types/AmountOptions';
 import { Image } from './types/Image';
 import { ImageTypeOptions } from './types/ImageTypeOptions';
-import { SortOptions } from './types/SortOptions';
+import { OrderOptions } from './types/OrderOptions';
 
 function App() {
 
   const [imageList, setImageList] = useState([] as Image[]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [amount, setAmount] = useState<AmountOptions>(15);
-  const [sortOption, setSortOption] = useState<SortOptions | 'none'>('none');
+  const [orderBy, setOrderBy] = useState<OrderOptions>('popular');
   const [imageType, setImageType] = useState<ImageTypeOptions>('all');
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
-  async function retrieveImageList(searchTerm: string, amount: AmountOptions, imageType: ImageTypeOptions) {
+  async function retrieveImageList(searchTerm: string, orderBy: OrderOptions, imageType: ImageTypeOptions, page: number) {
     try {
-      const newImageList = await getImageListData(searchTerm, amount, imageType);
+      const newImageList = await getImageListData(searchTerm, orderBy, imageType, page);
       setImageList(newImageList);
     }
     catch (error) {
@@ -31,35 +30,31 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(searchTerm);
-    if (!searchTerm) {
+    searchTerm ?
+      retrieveImageList(searchTerm, orderBy, imageType, currentPage)
+      :
       setImageList([]);
-      return;
-    }
-
-    retrieveImageList(searchTerm, amount, imageType);
-
-  }, [searchTerm, amount, imageType]);
+  }, [searchTerm, orderBy, imageType, currentPage]);
 
   return (
     <>
-      <Header onChangeSearchTerm={setSearchTerm} />
-      <main className="min-h-screen bg-[#E7ECEF] dark:bg-neutral-800">
-        <section className='max-w-6xl mx-auto px-6 py-8'>
+      <Header searchTerm={searchTerm} onChangeSearchTerm={setSearchTerm} />
+      <main className="bg-[#E7ECEF] dark:bg-neutral-800">
+        <section className='max-w-6xl mx-auto px-6 py-16'>
           <div className='bg-white dark:bg-neutral-700 py-8 px-4 rounded-lg'>
             {imageList.length === 0 ?
               (searchTerm ? <EmptySearch userHasTyped /> : <EmptySearch />)
               :
               (<>
                 <div className="flex flex-wrap gap-4 sm:gap-8 justify-between overflow-hidden items-center">
-                  <h2 className=' dark:text-white text-2xl font-semibold py-2 text-[#6096BA]'>Searching for: <span className='text-neutral-500 dark:text-neutral-400'>{searchTerm}</span></h2>
-                  <div className='flex gap-4 flex-wrap'>
-                    <AmountSelector amount={amount} onChangeAmount={setAmount} />
-                    <SortSelector sortOption={sortOption} onSortOptionChange={setSortOption} />
+                  <h2 className=' text-2xl font-semibold py-2 text-[#6096BA] dark:text-neutral-400 lg:text-3xl gap-2 flex flex-wrap'>Searching for: <span className='text-neutral-500 dark:text-white'>{searchTerm}</span></h2>
+                  <div className='flex gap-4 flex-wrap p-2'>
+                    <OrderSelector orderOption={orderBy} onOrderOptionChange={setOrderBy} />
                     <ImageTypeSelector imageType={imageType} onChangeImageType={setImageType} />
                   </div>
                 </div>
                 <ImageGallery imageList={imageList} />
+                <Pagination currentPage={currentPage} onChangePage={setCurrentPage} />
               </>
               )
             }

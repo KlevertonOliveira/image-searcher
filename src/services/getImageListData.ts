@@ -1,12 +1,12 @@
-import { AmountOptions } from '../types/AmountOptions';
 import { Image } from '../types/Image';
 import { ImageTypeOptions } from '../types/ImageTypeOptions';
+import { OrderOptions } from '../types/OrderOptions';
 
-export async function getImageListData(searchTerm: string, amount:AmountOptions, imageType:ImageTypeOptions) {
+export async function getImageListData(searchTerm: string, orderBy:OrderOptions, imageType:ImageTypeOptions, page: number) {
 
   const key = import.meta.env.VITE_APP_PIXABAY_API_KEY;
   const response = await fetch(
-    `https://pixabay.com/api/?key=${key}&q=${searchTerm}&image_type=${imageType}&per_page=${amount}`
+    `https://pixabay.com/api/?key=${key}&q=${searchTerm}&order=${orderBy}&image_type=${imageType}&page=${page}&per_page=30`
   );
   const data = await response.json();
 

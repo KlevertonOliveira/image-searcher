@@ -1,4 +1,5 @@
 import { SortOptions, sortOptions } from '../../types/SortOptions';
+import { capitalizeWord } from '../../utils/capitalize';
 
 type SortSelectorProps = {
   sortOption: SortOptions | 'none';
@@ -16,8 +17,7 @@ function SortSelector({ sortOption, onSortOptionChange }: SortSelectorProps) {
         onChange={(e) => onSortOptionChange(e.target.value as SortOptions)}
         className='selector'
       >
-        <option value="none" disabled>Choose a category</option>
-        {sortOptions.map(option => <option key={option} value={option}>{option}</option>)}
+        {sortOptions.map(option => <option key={option} value={option}>{capitalizeWord(option)}</option>)}
       </select>
     </div>
   );
