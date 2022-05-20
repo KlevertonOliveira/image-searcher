@@ -19,19 +19,20 @@ function App() {
   const [imageType, setImageType] = useState<ImageTypeOptions>('all');
   const [currentPage, setCurrentPage] = useState<number>(1);
 
-  async function retrieveImageList(searchTerm: string, orderBy: OrderOptions, imageType: ImageTypeOptions, page: number) {
+  async function retrieveImageList() {
     try {
-      const newImageList = await getImageListData(searchTerm, orderBy, imageType, page);
+      const newImageList = await getImageListData(searchTerm, orderBy, imageType, currentPage);
       setImageList(newImageList);
     }
     catch (error) {
       console.log(error);
+      setImageList([]);
     }
   }
 
   useEffect(() => {
     searchTerm ?
-      retrieveImageList(searchTerm, orderBy, imageType, currentPage)
+      retrieveImageList()
       :
       setImageList([]);
   }, [searchTerm, orderBy, imageType, currentPage]);
@@ -47,7 +48,12 @@ function App() {
               :
               (<>
                 <div className="flex flex-wrap gap-4 sm:gap-8 justify-between overflow-hidden items-center">
-                  <h2 className=' text-2xl font-semibold py-2 text-[#6096BA] dark:text-neutral-400 lg:text-3xl gap-2 flex flex-wrap'>Searching for: <span className='text-neutral-500 dark:text-white'>{searchTerm}</span></h2>
+                  <h2 className=' text-2xl font-semibold py-2 text-[#6096BA] dark:text-neutral-400 lg:text-3xl gap-2 flex flex-wrap'>
+                    Searching for:
+                    <span className='text-neutral-500 dark:text-white'>
+                      {searchTerm}
+                    </span>
+                  </h2>
                   <div className='flex gap-4 flex-wrap p-2'>
                     <OrderSelector orderOption={orderBy} onOrderOptionChange={setOrderBy} />
                     <ImageTypeSelector imageType={imageType} onChangeImageType={setImageType} />
