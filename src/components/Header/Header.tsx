@@ -11,7 +11,7 @@ function Header({ searchTerm, onChangeSearchTerm }: HeaderProps) {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className='p-5 bg-accent-light dark:bg-neutral-700 text-white'>
+    <header id='top' className='p-5 bg-accent-light dark:bg-neutral-700 text-white'>
       <nav className='flex items-center justify-between'>
         <div className="flex items-center gap-[0.5rem]">
           <CameraIcon className='h-7 w-7 hover:scale-125 transition-transform duration-300 ease-in-out hover:animate-pulse' />

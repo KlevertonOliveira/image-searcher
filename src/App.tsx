@@ -1,4 +1,6 @@
+import { ChevronUpIcon } from '@heroicons/react/solid';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-scroll';
 import EmptySearch from './components/EmptySearch';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -18,14 +20,17 @@ function App() {
   const [orderBy, setOrderBy] = useState<OrderOptions>('popular');
   const [imageType, setImageType] = useState<ImageTypeOptions>('all');
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [totalImages, setTotalImages] = useState(0); 
 
   async function retrieveImageList() {
     try {
-      const newImageList = await getImageListData(searchTerm, orderBy, imageType, currentPage);
-      setImageList(newImageList);
+      const { total, imageList } = await getImageListData(searchTerm, orderBy, imageType, currentPage);
+      setTotalImages(total);
+      setImageList(imageList);
     }
     catch (error) {
       console.log(error);
+      setTotalImages(0);
       setImageList([]);
     }
   }
@@ -60,11 +65,24 @@ function App() {
                   </div>
                 </div>
                 <ImageGallery imageList={imageList} />
-                <Pagination currentPage={currentPage} onChangePage={setCurrentPage} />
+                <Pagination
+                  currentPage={currentPage}
+                  onChangePage={setCurrentPage}
+                  totalImages={totalImages}
+                />
               </>
               )
             }
           </div>
+          {totalImages !== 0 && searchTerm &&
+            <div className='mt-20 flex justify-center'>
+              <Link to='top' smooth duration={1000}>
+                <span className='bg-accent-light dark:bg-neutral-600 py-2 px-3 rounded-lg hover:opacity-80 transition-opacity cursor-pointer text-lg sm:text-xl text-white flex gap-1 items-center'>
+                  Back to Top <ChevronUpIcon className='w-5 h-5' />
+                </span>
+              </Link>
+            </div>
+          }
         </section>
       </main>
       <Footer />
