@@ -1,6 +1,7 @@
 import { ChevronUpIcon } from '@heroicons/react/solid';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-scroll';
+import { useTranslation } from 'react-i18next';
+import { Link as Scroll } from 'react-scroll';
 import EmptySearch from './components/EmptySearch';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -22,6 +23,8 @@ function App() {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalImages, setTotalImages] = useState(0);
   const [isFetching, setIsFetching] = useState(false);
+
+  const { t } = useTranslation();
 
   async function retrieveImageList() {
     setIsFetching(true);
@@ -61,7 +64,7 @@ function App() {
               (<>
                 <div className="flex flex-wrap gap-4 sm:gap-8 justify-between overflow-hidden items-center">
                   <h2 className=' text-2xl font-semibold py-2 text-[#6096BA] dark:text-neutral-400 lg:text-3xl gap-2 flex flex-wrap'>
-                    Searching for:
+                    {t('searchingFor')}:
                     <span className='text-neutral-500 dark:text-white'>
                       {searchTerm}
                     </span>
@@ -83,11 +86,11 @@ function App() {
           </div>
           {totalImages !== 0 && searchTerm &&
             <div className='mt-20 flex justify-center'>
-              <Link to='top' smooth duration={1000}>
-                <span className='bg-accent-light dark:bg-neutral-600 py-2 px-3 rounded-lg hover:opacity-80 transition-opacity cursor-pointer text-lg sm:text-xl text-white flex gap-1 items-center'>
-                  Back to Top <ChevronUpIcon className='w-5 h-5' />
+              <Scroll to='top' smooth duration={1000}>
+                <span className='bg-accent-light dark:bg-neutral-600 py-2 px-3 rounded-lg hover:opacity-80 transition-opacity cursor-pointer text-base sm:text-lg text-white flex gap-1 items-center shadow-lg'>
+                  {t('backToTop')} <ChevronUpIcon className='w-5 h-5' />
                 </span>
-              </Link>
+              </Scroll>
             </div>
           }
         </section>

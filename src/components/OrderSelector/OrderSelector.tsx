@@ -1,5 +1,5 @@
+import { useTranslation } from 'react-i18next';
 import { OrderOptions, orderOptions } from '../../types/OrderOptions';
-import { capitalizeWord } from '../../utils/capitalize';
 
 type SortSelectorProps = {
   orderOption: OrderOptions;
@@ -8,16 +8,18 @@ type SortSelectorProps = {
 
 function OrderSelector({ orderOption, onOrderOptionChange }: SortSelectorProps) {
 
+  const { t } = useTranslation();
+
   return (
     <div className='flex flex-col'>
-      <label htmlFor="orderBy" className='selector-label'>Order By:</label>
+      <label htmlFor="orderBy" className='selector-label'>{t('orderBy')}:</label>
       <select
         id='orderBy'
         value={orderOption}
         onChange={(e) => onOrderOptionChange(e.target.value as OrderOptions)}
         className='selector'
       >
-        {orderOptions.map(option => <option key={option} value={option}>{capitalizeWord(option)}</option>)}
+        {orderOptions.map(option => <option key={option} value={option}>{t(option)}</option>)}
       </select>
     </div>
   );

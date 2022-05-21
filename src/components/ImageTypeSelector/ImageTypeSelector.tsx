@@ -1,5 +1,5 @@
+import { useTranslation } from 'react-i18next';
 import { ImageTypeOptions, imageTypeOptions } from '../../types/ImageTypeOptions';
-import { capitalizeWord } from '../../utils/capitalize';
 
 type ImageTypeSelectorProps = {
   imageType: ImageTypeOptions;
@@ -8,16 +8,18 @@ type ImageTypeSelectorProps = {
 
 function ImageTypeSelector({ imageType, onChangeImageType }: ImageTypeSelectorProps) {
 
+  const { t } = useTranslation();
+
   return (
     <div className='flex flex-col'>
-      <label htmlFor="imageType" className='selector-label'>Type:</label>
+      <label htmlFor="imageType" className='selector-label'>{t('type')}:</label>
       <select
         id='imageType'
         value={imageType}
         className='selector'
         onChange={(e) => onChangeImageType(e.target.value as ImageTypeOptions)}
       >
-        {imageTypeOptions.map(option => <option key={option} value={option}>{capitalizeWord(option)}</option>)}
+        {imageTypeOptions.map(option => <option key={option} value={option}>{t(option)}</option>)}
       </select>
     </div>
   );

@@ -1,6 +1,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-scroll';
+import { useTranslation } from 'react-i18next';
+import { Link as Scroll } from 'react-scroll';
 
 type PaginationProps = {
   currentPage: number;
@@ -10,11 +11,13 @@ type PaginationProps = {
 
 function Pagination({ currentPage, onChangePage, totalImages }: PaginationProps) {
 
+  const { t } = useTranslation();
+
   const [totalNumberOfPages, setTotalNumberOfPages] = useState(1);
-  const imagesPerPage = 30;
+  const imagesPerPage = 18;
 
   function calculateTotalPages() {
-    return totalImages >= 300 ? 10 : Math.ceil(totalImages / imagesPerPage);
+    return totalImages >= 180 ? 10 : Math.ceil(totalImages / imagesPerPage);
   }
 
   useEffect(() => {
@@ -26,37 +29,37 @@ function Pagination({ currentPage, onChangePage, totalImages }: PaginationProps)
       <nav aria-label="Page navigation">
         <ul className="flex list-style-none items-center gap-1 flex-wrap justify-center">
           <li>
-            <Link to='top' smooth duration={1000} onClick={() => onChangePage(currentPage - 1)}>
+            <Scroll to='top' smooth duration={1000} onClick={() => onChangePage(currentPage - 1)}>
               <button
                 disabled={currentPage === 1}
                 className={`page ${currentPage === 1 && 'disabled'}`}
-                aria-label='Previous Page'
-                title='Previous page'
+                aria-label={t('previousPage')}
+                title={t('previousPage')}
               >
                 <ChevronLeftIcon className='h-5 w-5' />
               </button>
-            </Link>
+            </Scroll>
           </li>
           {Array(totalNumberOfPages).fill('').map((_, index) => (
             <li key={index + 1}>
-              <Link to='top' smooth duration={1000} onClick={() => onChangePage(index + 1)}>
+              <Scroll to='top' smooth duration={1000} onClick={() => onChangePage(index + 1)}>
                 <span className={`page ${index + 1 === currentPage && 'active'}`}>
                   {index + 1}
                 </span>
-              </Link>
+              </Scroll>
             </li>
           ))}
           <li>
-            <Link to='top' smooth duration={1000} onClick={() => onChangePage(currentPage + 1)}>
+            <Scroll to='top' smooth duration={1000} onClick={() => onChangePage(currentPage + 1)}>
               <button
                 disabled={currentPage === totalNumberOfPages}
                 className={`page ${currentPage === totalNumberOfPages && 'disabled'}`}
-                aria-label='Next Page'
-                title='Next page'
+                aria-label={t('nextPage')}
+                title={t('nextPage')}
               >
                 <ChevronRightIcon className='h-5 w-5' />
               </button>
-            </Link>
+            </Scroll>
           </li>
         </ul>
       </nav>

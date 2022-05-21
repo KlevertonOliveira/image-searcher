@@ -6,7 +6,7 @@ export async function getImageListData(searchTerm: string, orderBy:OrderOptions,
 
   const key = import.meta.env.VITE_APP_PIXABAY_API_KEY;
   const response = await fetch(
-    `https://pixabay.com/api/?key=${key}&q=${searchTerm}&order=${orderBy}&image_type=${imageType}&page=${page}&per_page=30`
+    `https://pixabay.com/api/?key=${key}&q=${searchTerm}&order=${orderBy}&image_type=${imageType}&page=${page}&per_page=18`
   );
   const data = await response.json();
 

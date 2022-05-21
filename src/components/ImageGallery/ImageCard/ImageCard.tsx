@@ -1,4 +1,5 @@
 import { ChevronRightIcon } from '@heroicons/react/outline';
+import { useTranslation } from 'react-i18next';
 import { Image } from '../../../types/Image';
 
 type ImageCardProps = {
@@ -6,6 +7,9 @@ type ImageCardProps = {
 };
 
 function ImageCard({ image }: ImageCardProps) {
+
+  const { t } = useTranslation();
+
   return (
     <div className='rounded-lg w-full h-[250px]'>
       <div className="rounded-lg shadow-lg bg-white relative h-full">
@@ -18,10 +22,10 @@ function ImageCard({ image }: ImageCardProps) {
               {image.tags.substring(0, 30)}
               {image.tags.length > 30 && '...'}
             </p>
-            <p className='text-xs'>By: {image.user}</p>
+            <p className='text-xs'>{t('by')}: {image.user}</p>
           </div>
           <button className='flex items-center hover:opacity-70 transition-opacity'>
-            <span className='text-sm'>More</span>
+            <span className='text-sm'>{t('more')}</span>
             <ChevronRightIcon className='h-4 w-4' /></button>
         </div>
       </div>
