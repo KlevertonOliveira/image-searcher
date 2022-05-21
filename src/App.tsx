@@ -20,9 +20,11 @@ function App() {
   const [orderBy, setOrderBy] = useState<OrderOptions>('popular');
   const [imageType, setImageType] = useState<ImageTypeOptions>('all');
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [totalImages, setTotalImages] = useState(0); 
+  const [totalImages, setTotalImages] = useState(0);
+  const [isFetching, setIsFetching] = useState(false);
 
   async function retrieveImageList() {
+    setIsFetching(true);
     try {
       const { total, imageList } = await getImageListData(searchTerm, orderBy, imageType, currentPage);
       setTotalImages(total);
@@ -33,18 +35,23 @@ function App() {
       setTotalImages(0);
       setImageList([]);
     }
+    setIsFetching(false);
   }
 
   useEffect(() => {
-    searchTerm ?
-      retrieveImageList()
-      :
-      setImageList([]);
-  }, [searchTerm, orderBy, imageType, currentPage]);
+    if (isFetching) return;
+    setCurrentPage(1);
+    searchTerm ? retrieveImageList() : setImageList([]);
+  }, [searchTerm, orderBy, imageType]);
+
+  useEffect(() => {
+    if (isFetching) return;
+    searchTerm ? retrieveImageList() : setImageList([]);
+  }, [currentPage])
 
   return (
     <>
-      <Header searchTerm={searchTerm} onChangeSearchTerm={setSearchTerm} />
+      <Header onChangeSearchTerm={setSearchTerm} />
       <main className="bg-[#E7ECEF] dark:bg-neutral-800">
         <section className='max-w-6xl mx-auto px-6 py-16'>
           <div className='bg-white dark:bg-neutral-700 py-8 px-4 rounded-lg'>

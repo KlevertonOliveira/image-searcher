@@ -4,10 +4,8 @@ import { Image } from '../types/Image';
 function useGetImageListData() {
 
   const [imageListData, setImageListData] = useState([] as Image[]);
-  const [isLoading, setIsLoading] = useState(false);
 
   async function getImageListData() {
-    setIsLoading(true);
 
     const key = import.meta.env.VITE_APP_PIXABAY_API_KEY;
     const response = await fetch(`https://pixabay.com/api/?key=${key}&q=dog&image_type=photo`);
@@ -26,16 +24,13 @@ function useGetImageListData() {
     }));
 
     setImageListData(imageList);
-    setIsLoading(false);
   }
 
   useEffect(() => {
     getImageListData();
   }, []);
 
-  return {
-    imageListData, isLoading
-  };
+  return { imageListData };
 }
 
 export default useGetImageListData;

@@ -1,12 +1,20 @@
 import { CameraIcon, MoonIcon, SunIcon, XIcon } from '@heroicons/react/solid';
+import { useEffect, useState } from 'react';
+import useDebounce from '../../hooks/useDebounce';
 import useTheme from '../../hooks/useTheme';
 
 type HeaderProps = {
-  searchTerm: string;
   onChangeSearchTerm: (searchTerm: string) => void;
 };
 
-function Header({ searchTerm, onChangeSearchTerm }: HeaderProps) {
+function Header({ onChangeSearchTerm }: HeaderProps) {
+
+  const [inputValue, setInputValue] = useState('');
+  const debouncedValue = useDebounce<string>(inputValue, 500);
+
+  useEffect(() => {
+    onChangeSearchTerm(debouncedValue);
+  }, [debouncedValue]);
 
   const { theme, toggleTheme } = useTheme();
 
@@ -22,14 +30,14 @@ function Header({ searchTerm, onChangeSearchTerm }: HeaderProps) {
             type="text"
             placeholder='Search...'
             autoFocus
-            onChange={e => onChangeSearchTerm(e.target.value)}
+            onChange={(e) => setInputValue(e.target.value)}
             className='searcher w-full'
-            value={searchTerm}
+            value={inputValue}
           />
-          {searchTerm && (
+          {inputValue && (
             <button
               title='Clear search'
-              onClick={() => onChangeSearchTerm('')}
+              onClick={() => setInputValue('')}
               className='absolute top-[30%] right-2 hover:opacity-70 transition-opacity'>
               <XIcon className='w-4 h-4' />
             </button>

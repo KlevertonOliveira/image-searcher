@@ -22,7 +22,7 @@ function Pagination({ currentPage, onChangePage, totalImages }: PaginationProps)
   }, [totalImages])
 
   return (
-    <div className="mt-8 flex justify-center flex-wrap items-center">
+    <div className="mt-8 py-6 flex justify-center flex-wrap items-center">
       <nav aria-label="Page navigation">
         <ul className="flex list-style-none items-center gap-1 flex-wrap justify-center">
           <li>

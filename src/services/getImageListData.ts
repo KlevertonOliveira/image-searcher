@@ -11,8 +11,6 @@ export async function getImageListData(searchTerm: string, orderBy:OrderOptions,
   const data = await response.json();
 
   const total:number = data.total;
-  console.log(data.totalHits);
-  
 
   const imageList: Image[] = data.hits.map((image: any) => ({
     id: image.id,
