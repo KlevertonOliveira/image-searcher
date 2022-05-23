@@ -53,9 +53,9 @@ function App() {
   }, [currentPage])
 
   return (
-    <>
+    <div className='bg-[#E7ECEF] dark:bg-neutral-800 min-h-screen'>
       <Header onChangeSearchTerm={setSearchTerm} />
-      <main className="bg-[#E7ECEF] dark:bg-neutral-800">
+      <main className="">
         <section className='max-w-6xl mx-auto px-6 py-16'>
           <div className='bg-white dark:bg-neutral-700 py-8 px-4 rounded-lg'>
             {imageList.length === 0 ?
@@ -96,7 +96,7 @@ function App() {
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

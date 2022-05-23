@@ -1,6 +1,6 @@
-import { languages } from '../../assets/data/languages';
-import { useLanguage } from '../../hooks/useLanguage';
-import { Language } from '../../types/Language';
+import { languages } from '../../../assets/data/languages';
+import { useLanguage } from '../../../hooks/useLanguage';
+import { Language } from '../../../types/Language';
 
 function LanguageSwitcher() {
 

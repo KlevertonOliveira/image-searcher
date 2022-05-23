@@ -1,9 +1,9 @@
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon, ChevronRightIcon, CogIcon, MoonIcon, SunIcon } from '@heroicons/react/solid';
 import { useTranslation } from 'react-i18next';
-import { languages } from '../../assets/data/languages';
-import { useLanguage } from '../../hooks/useLanguage';
-import { useTheme } from '../../hooks/useTheme';
+import { languages } from '../../../assets/data/languages';
+import { useLanguage } from '../../../hooks/useLanguage';
+import { useTheme } from '../../../hooks/useTheme';
 
 function DropdownMenu() {
 
