@@ -32,7 +32,7 @@ function Pagination({ currentPage, onChangePage, totalImages }: PaginationProps)
             <Scroll to='top' smooth duration={1000} onClick={() => onChangePage(currentPage - 1)}>
               <button
                 disabled={currentPage === 1}
-                className={`page ${currentPage === 1 && 'disabled'}`}
+                className={`page ${currentPage === 1 && 'page-disabled'}`}
                 aria-label={t('previousPage')}
                 title={t('previousPage')}
               >
@@ -53,7 +53,7 @@ function Pagination({ currentPage, onChangePage, totalImages }: PaginationProps)
             <Scroll to='top' smooth duration={1000} onClick={() => onChangePage(currentPage + 1)}>
               <button
                 disabled={currentPage === totalNumberOfPages}
-                className={`page ${currentPage === totalNumberOfPages && 'disabled'}`}
+                className={`page ${currentPage === totalNumberOfPages && 'page-disabled'}`}
                 aria-label={t('nextPage')}
                 title={t('nextPage')}
               >

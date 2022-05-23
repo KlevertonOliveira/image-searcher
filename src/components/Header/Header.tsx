@@ -1,8 +1,9 @@
-import { CameraIcon, ChevronDownIcon, CogIcon, MoonIcon, SunIcon, XIcon } from '@heroicons/react/solid';
+import { CameraIcon, MoonIcon, SunIcon, XIcon } from '@heroicons/react/solid';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import useDebounce from '../../hooks/useDebounce';
-import useTheme from '../../hooks/useTheme';
+import { useTheme } from '../../hooks/useTheme';
+import DropdownMenu from '../DropdownMenu';
 import LanguageSwitcher from '../LanguageSwitcher';
 
 type HeaderProps = {
@@ -57,124 +58,7 @@ function Header({ onChangeSearchTerm }: HeaderProps) {
           </button>
         </div>
         <div className='md:hidden'>
-          <div className="flex justify-center">
-            <div>
-              <div className="dropdown relative">
-                <button
-                  className="
-                    dropdown-toggle
-                    px-2.5
-                    py-2.5
-                    bg-blue-600
-                    text-white
-                    font-medium
-                    text-xs
-                    leading-tight
-                    uppercase
-                    rounded
-                    shadow-md
-                    hover:bg-blue-700 hover:shadow-lg
-                    focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-                    active:bg-blue-800 active:shadow-lg active:text-white
-                    transition
-                    duration-150
-                    ease-in-out
-                    flex
-                    items-center
-                    whitespace-nowrap
-                    gap-1
-                  "
-                  type="button"
-                  id="dropdownMenuButton1"
-                  data-bs-toggle="dropdown"
-                  aria-expanded={true}
-                >
-                  <CogIcon className='w-5 h-5' />
-                  <ChevronDownIcon className='w-4 h-4' />
-                </button>
-                <ul
-                  className="
-                    dropdown-menu
-                    min-w-max
-                    absolute
-                    bg-white
-                    text-base
-                    z-50
-                    float-left
-                    py-2
-                    list-none
-                    text-left
-                    rounded-lg
-                    shadow-lg
-                    mt-1
-                    hidden
-                    m-0
-                    bg-clip-padding
-                    border-none
-                  "
-                  aria-labelledby="dropdownMenuButton1"
-                >
-                  <li>
-                    <a
-                      className="
-                        dropdown-item
-                        text-sm
-                        py-2
-                        px-4
-                        font-normal
-                        block
-                        w-full
-                        whitespace-nowrap
-                        bg-transparent
-                        text-gray-700
-                        hover:bg-gray-100
-                      "
-                      href="#"
-                    >Action</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      className="
-                        dropdown-item
-                        text-sm
-                        py-2
-                        px-4
-                        font-normal
-                        block
-                        w-full
-                        whitespace-nowrap
-                        bg-transparent
-                        text-gray-700
-                        hover:bg-gray-100
-                      "
-                      href="#"
-                    >Another action</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      className="
-                        dropdown-item
-                        text-sm
-                        py-2
-                        px-4
-                        font-normal
-                        block
-                        w-full
-                        whitespace-nowrap
-                        bg-transparent
-                        text-gray-700
-                        hover:bg-gray-100
-                      "
-                      href="#"
-                    >Something else here</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <DropdownMenu />
         </div>
       </nav>
     </header>

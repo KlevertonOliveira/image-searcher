@@ -1,33 +1,21 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { languages } from '../../assets/data/languages';
+import { useLanguage } from '../../hooks/useLanguage';
+import { Language } from '../../types/Language';
 
 function LanguageSwitcher() {
 
-  const languages = [
-    {
-      code: 'en',
-      name: 'en-us',
-      flag: '🇺🇸'
-    },
-    {
-      code: 'pt',
-      name: 'pt-br',
-      flag: '🇧🇷'
-    }
-  ];
-
-  const { i18n } = useTranslation();
+  const { language, changeLanguage } = useLanguage();
 
   return (
     <select
-      defaultValue={i18n.language}
-      onChange={(e) => i18n.changeLanguage(e.target.value)}
-      className='selector'
+      value={language}
+      onChange={(e) => changeLanguage(e.target.value as Language)}
+      className='selector text-neutral-600 font-medium'
     >
-      {languages.map(({ code, name, flag }) => {
+      {Object.values(languages).map(({ code, name, flag }) => {
         return (
-          <option key={code} value={code} title={name}>
-            {flag}
+          <option key={code} value={code} title={name} className='text-lg'>
+            {flag} {name}
           </option>
         );
       }

@@ -18,14 +18,14 @@ function ImageCard({ image }: ImageCardProps) {
         </a>
         <div className='absolute bottom-0 right-0 text-white w-full p-3 bg-[rgba(0,0,0,0.7)] rounded flex justify-between'>
           <div className='flex flex-col gap-1'>
-            <p className='text-sm'>
+            <p className='text-sm font-medium'>
               {image.tags.substring(0, 30)}
               {image.tags.length > 30 && '...'}
             </p>
-            <p className='text-xs'>{t('by')}: {image.user}</p>
+            <p className='text-xs font-medium'>{t('by')}: {image.user}</p>
           </div>
           <button className='flex items-center hover:opacity-70 transition-opacity'>
-            <span className='text-sm'>{t('more')}</span>
+            <span className='text-sm font-medium'>{t('more')}</span>
             <ChevronRightIcon className='h-4 w-4' /></button>
         </div>
       </div>
