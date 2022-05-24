@@ -1,12 +1,11 @@
 export type Image = {
   id: number;
-  url: string;
-  type: string;
-  pageUrl: string;
+  author: string;
   tags: string;
+  type: string;
   views: number;
   likes: number;
   downloads: number;
-  user: string;
-  userImageURL: string;
+  imageURL: string;
+  pageURL: string;
 };

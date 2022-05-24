@@ -12,7 +12,7 @@ function ImageTypeSelector({ imageType, onChangeImageType }: ImageTypeSelectorPr
 
   return (
     <div className='flex flex-col'>
-      <label htmlFor="imageType" className='selector-label'>{t('type')}:</label>
+      <label htmlFor="imageType" className='selector-label'>{t('typeCategory')}:</label>
       <select
         id='imageType'
         value={imageType}

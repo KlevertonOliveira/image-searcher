@@ -15,7 +15,7 @@
   "orderBy": "Order By",
   "popular": "Popular",
   "latest": "Latest",
-  "type": "Type",
+  "typeCategory": "Type",
   "all": "All",
   "photo": "Photo",
   "illustration": "Illustration",
@@ -25,5 +25,14 @@
   "previousPage": "Previous page",
   "nextPage": "Next page",
   "backToTop": "Back to Top",
-  "allRightsReserved": "All rights reserved"
+  "allRightsReserved": "All rights reserved",
+  "back": "Back",
+  "author": "Author",
+  "tags": "Tags",
+  "type": "Type",
+  "views": "Views",
+  "likes": "Likes",
+  "downloads": "Downloads",
+  "imageURL": "Image URL",
+  "pageURL": "Page URL"
 }

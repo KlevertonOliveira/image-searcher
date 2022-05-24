@@ -6,6 +6,9 @@
   html {
     font-family: "Poppins", sans-serif;
   }
+  body {
+    @apply bg-[#E7ECEF] dark:bg-neutral-800 min-h-screen;
+  }
 }
 
 @layer components {
@@ -28,6 +31,18 @@
   
   .page {
     @apply h-10 w-10 flex justify-center cursor-pointer items-center rounded-lg shadow-md bg-white hover:bg-neutral-100 text-neutral-500 dark:bg-neutral-600 dark:hover:bg-neutral-500 dark:text-white transition-colors
+  }
+
+  .directional-button {
+    @apply bg-accent-light dark:bg-neutral-600 py-2 px-4 rounded-md hover:bg-accent-light-hover dark:hover:bg-neutral-500 transition-colors cursor-pointer font-semibold text-base sm:text-lg text-white flex gap-1 items-center shadow-lg;
+  }
+
+  .property-title {
+    @apply font-semibold text-lg sm:text-xl text-neutral-600 dark:text-white;
+  }
+
+  .property-value {
+    @apply font-medium text-lg sm:text-xl ml-2 text-neutral-500 dark:text-neutral-200;
   }
 }
 

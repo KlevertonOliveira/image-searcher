@@ -14,16 +14,41 @@ export async function getImageListData(searchTerm: string, orderBy:OrderOptions,
 
   const imageList: Image[] = data.hits.map((image: any) => ({
     id: image.id,
-    url: image.largeImageURL,
-    type: image.type,
-    pageURL: image.pageURL,
+    author: image.user,
     tags: image.tags,
+    type: image.type,
     views: image.views,
     likes: image.likes,
     downloads: image.downloads,
-    user: image.user,
-    userImageURL: image.userImageURL
+    imageURL: image.webformatURL,
+    pageURL: image.pageURL,
   }));
 
   return {total, imageList};
+}
+
+export async function getSingleImageData(id:string){
+
+  const key = import.meta.env.VITE_APP_PIXABAY_API_KEY;
+  const response = await fetch(
+    `https://pixabay.com/api/?key=${key}&id=${id}`
+  );
+  
+  const data = await response.json();
+
+  console.log(data);
+  
+  const imageData: Image[] = data.hits.map((image: any) => ({
+    id: image.id,
+    author: image.user,
+    tags: image.tags,
+    type: image.type,
+    views: image.views,
+    likes: image.likes,
+    downloads: image.downloads,
+    imageURL: image.webformatURL,
+    pageURL: image.pageURL,
+  }));
+
+  return imageData[0];
 }

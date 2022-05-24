@@ -13,9 +13,9 @@
   "noResultImgAlt" : "Ilustração de uma mulher segurando uma caixa vazia.",
   "searchingFor": "Buscando por",
   "orderBy": "Ordenar por",
-  "popular": "Popular",
-  "latest": "Recente",
-  "type": "Tipo",
+  "popular": "Populares",
+  "latest": "Recentes",
+  "typeCategory": "Categoria",
   "all": "Tudo",
   "photo": "Foto",
   "illustration": "Ilustração",
@@ -25,5 +25,14 @@
   "previousPage": "Página anterior",
   "nextPage": "Próxima página",
   "backToTop": "Voltar ao topo",
-  "allRightsReserved": "Todos os direitos reservados"
+  "allRightsReserved": "Todos os direitos reservados",
+  "back": "Voltar",
+  "author": "Autor",
+  "tags": "Tags",
+  "type": "Categoria",
+  "views": "Visualizações",
+  "likes": "Curtidas",
+  "downloads": "Transferências",
+  "imageURL": "URL da Imagem",
+  "pageURL": "URL da Página"
 }
