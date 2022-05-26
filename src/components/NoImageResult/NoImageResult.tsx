@@ -1,26 +1,25 @@
 import { useTranslation } from 'react-i18next';
 import codeTypingImg from '../../assets/images/code-typing-animate.svg';
 import noResultImg from '../../assets/images/empty.svg';
-import EmptySearchFeedback from './EmptySearchFeedback';
+import NoImageResultFeedback from './NoImageResultFeedback';
 
-
-type EmptySearchProps = {
+type NoImageResultProps = {
   userHasTyped?: boolean;
 };
 
-function EmptySearch({ userHasTyped }: EmptySearchProps) {
+function NoImageResult({ userHasTyped }: NoImageResultProps) {
 
   const { t } = useTranslation();
 
   return !userHasTyped ?
-    (<EmptySearchFeedback
+    (<NoImageResultFeedback
       imgSrc={codeTypingImg}
       imgAlt={t('codeTypingImgAlt')}
       content={t('startTyping')}
     />
     )
     :
-    (<EmptySearchFeedback
+    (<NoImageResultFeedback
       imgSrc={noResultImg}
       imgAlt={t('noResultImgAlt')}
       content={t('noResultsFound')}
@@ -28,4 +27,4 @@ function EmptySearch({ userHasTyped }: EmptySearchProps) {
     );
 }
 
-export default EmptySearch;
+export default NoImageResult;

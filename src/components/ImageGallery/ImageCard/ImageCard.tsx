@@ -29,7 +29,7 @@ function ImageCard({ image }: ImageCardProps) {
             <Link to={`/images/${image.id}`}>
               <span className='text-sm font-medium'>{t('more')}</span>
             </Link>
-            <ChevronRightIcon className='h-4 w-4' /></button>
+            <ChevronRightIcon className='h-4 w-4 mt-0.5' /></button>
         </div>
       </div>
     </div>

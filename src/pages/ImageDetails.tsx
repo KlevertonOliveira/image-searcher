@@ -5,6 +5,8 @@ import { Link, useParams } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import ImageInfo from '../components/ImageInfo';
+import Loading from '../components/Loading';
+import NoImageResult from '../components/NoImageResult';
 import { getSingleImageData } from '../services/getApiData';
 import { Image } from '../types/Image';
 
@@ -35,16 +37,18 @@ function ImageDetails() {
   }, [imageId]);
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <div className='grid min-h-screen place-items-center'><Loading /></div>;
   }
 
   return (
     <div className='flex flex-col min-h-screen'>
       <Header />
       <main className='flex-1 flex justify-center'>
-        <div className='max-w-6xl px-4 py-10 w-full flex flex-col gap-10'>
-          <section className='order-2 max-w-md mx-auto lg:max-w-full lg:mx-0 bg-white dark:bg-neutral-700 py-8 px-4 rounded-lg'>
-            <ImageInfo image={image} />
+        <div className='max-w-6xl px-4 py-8 w-full flex flex-col gap-8'>
+          <section className='order-2 max-w-lg mx-auto lg:max-w-full lg:mx-0 bg-white dark:bg-neutral-700 py-8 px-4 rounded-lg'>
+            {Object.keys(image).length === 0 ?
+              <NoImageResult userHasTyped /> : <ImageInfo image={image} />
+            }
           </section>
           <section className='order-1 w-fit'>
             <Link to='/'>

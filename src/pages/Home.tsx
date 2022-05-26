@@ -2,12 +2,12 @@ import { ArrowUpIcon } from '@heroicons/react/solid';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link as Scroll } from 'react-scroll';
-import EmptySearch from '../components/EmptySearch';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import SearchInput from '../components/Header/SearchInput';
 import ImageGallery from '../components/ImageGallery';
 import ImageTypeSelector from '../components/ImageTypeSelector';
+import NoImageResult from '../components/NoImageResult';
 import OrderSelector from '../components/OrderSelector';
 import Pagination from '../components/Pagination';
 import { getImageListData } from '../services/getApiData';
@@ -56,15 +56,15 @@ function Home() {
   }, [currentPage]);
 
   return (
-    <>
+    <div className='flex flex-col min-h-screen'>
       <Header>
         <SearchInput onChangeSearchTerm={setSearchTerm} />
       </Header>
-      <main>
-        <section className='max-w-6xl mx-auto px-6 py-16'>
+      <main className='flex-1'>
+        <section className='max-w-6xl mx-auto px-4 py-12'>
           <div className='bg-white dark:bg-neutral-700 py-8 px-4 rounded-lg'>
             {imageList.length === 0 ?
-              (searchTerm ? <EmptySearch userHasTyped /> : <EmptySearch />)
+              (searchTerm ? <NoImageResult userHasTyped /> : <NoImageResult />)
               :
               (<>
                 <div className="flex flex-wrap gap-4 sm:gap-8 justify-between overflow-hidden items-center">
@@ -90,7 +90,7 @@ function Home() {
             }
           </div>
           {totalImages !== 0 && searchTerm &&
-            <div className='mt-20 flex justify-center'>
+            <div className='mt-12 flex justify-center'>
               <Scroll to='top' smooth duration={1000}>
                 <span className='directional-button'>
                   {t('backToTop')} <ArrowUpIcon className='w-5 h-5 ml-2' />
@@ -101,7 +101,7 @@ function Home() {
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

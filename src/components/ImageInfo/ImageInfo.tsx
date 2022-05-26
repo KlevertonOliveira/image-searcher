@@ -17,9 +17,9 @@ function ImageInfo({ image }: { image: Image; }) {
       </div>
       <div className='m-2 flex h-full justify-center flex-col gap-3'>
         {Object.entries(image).map(([key, value]) => {
-          if (key === 'id' || key === 'authorImageURL') return;
+          if (key === 'id') return;
 
-          if (key === 'pageURL' || key === 'imageURL') {
+          if (key.endsWith('URL')) {
             return (
               <div key={key}>
                 <span className='property-title flex items-center'>
@@ -36,8 +36,7 @@ function ImageInfo({ image }: { image: Image; }) {
             <div key={key}>
               <span className='property-title'>{t(key)}: </span>
               <span className='property-value'>
-                {typeof value === 'number' ?
-                  value.toLocaleString() : value}
+                {typeof value === 'number' ? value.toLocaleString() : value}
               </span>
             </div>
           );
