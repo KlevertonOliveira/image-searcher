@@ -2,6 +2,7 @@ import { ArrowUpIcon } from '@heroicons/react/solid';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link as Scroll } from 'react-scroll';
+import AnimatedPage from '../components/AnimatedPage';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import SearchInput from '../components/Header/SearchInput';
@@ -56,52 +57,54 @@ function Home() {
   }, [currentPage]);
 
   return (
-    <div className='flex flex-col min-h-screen'>
-      <Header>
-        <SearchInput onChangeSearchTerm={setSearchTerm} />
-      </Header>
-      <main className='flex-1'>
-        <section className='max-w-6xl mx-auto px-4 py-12'>
-          <div className='bg-white dark:bg-neutral-700 py-8 px-4 rounded-lg'>
-            {imageList.length === 0 ?
-              (searchTerm ? <NoImageResult userHasTyped /> : <NoImageResult />)
-              :
-              (<>
-                <div className="flex flex-wrap gap-4 sm:gap-8 justify-between overflow-hidden items-center">
-                  <h2 className=' text-2xl font-semibold py-2 text-[#6096BA] dark:text-neutral-400 lg:text-3xl gap-2 flex flex-wrap'>
-                    {t('searchingFor')}:
-                    <span className='text-neutral-500 dark:text-white'>
-                      {searchTerm}
-                    </span>
-                  </h2>
-                  <div className='flex gap-4 flex-wrap p-2'>
-                    <OrderSelector orderOption={orderBy} onOrderOptionChange={setOrderBy} />
-                    <ImageTypeSelector imageType={imageType} onChangeImageType={setImageType} />
+    <AnimatedPage>
+      <div className='flex flex-col min-h-screen'>
+        <Header>
+          <SearchInput onChangeSearchTerm={setSearchTerm} />
+        </Header>
+        <main className='flex-1'>
+          <section className='max-w-6xl mx-auto px-4 py-12'>
+            <div className='bg-white dark:bg-neutral-700 py-8 px-4 rounded-lg'>
+              {imageList.length === 0 ?
+                (searchTerm ? <NoImageResult userHasTyped /> : <NoImageResult />)
+                :
+                (<>
+                  <div className="flex flex-wrap gap-4 sm:gap-8 justify-between overflow-hidden items-center">
+                    <h2 className=' text-2xl font-semibold py-2 text-[#6096BA] dark:text-neutral-400 lg:text-3xl gap-2 flex flex-wrap'>
+                      {t('searchingFor')}:
+                      <span className='text-neutral-500 dark:text-white'>
+                        {searchTerm}
+                      </span>
+                    </h2>
+                    <div className='flex gap-4 flex-wrap p-2'>
+                      <OrderSelector orderOption={orderBy} onOrderOptionChange={setOrderBy} />
+                      <ImageTypeSelector imageType={imageType} onChangeImageType={setImageType} />
+                    </div>
                   </div>
-                </div>
-                <ImageGallery imageList={imageList} />
-                <Pagination
-                  currentPage={currentPage}
-                  onChangePage={setCurrentPage}
-                  totalImages={totalImages}
-                />
-              </>
-              )
-            }
-          </div>
-          {totalImages !== 0 && searchTerm &&
-            <div className='mt-12 flex justify-center'>
-              <Scroll to='top' smooth duration={1000}>
-                <span className='directional-button'>
-                  {t('backToTop')} <ArrowUpIcon className='w-5 h-5 ml-2' />
-                </span>
-              </Scroll>
+                  <ImageGallery imageList={imageList} />
+                  <Pagination
+                    currentPage={currentPage}
+                    onChangePage={setCurrentPage}
+                    totalImages={totalImages}
+                  />
+                </>
+                )
+              }
             </div>
-          }
-        </section>
-      </main>
-      <Footer />
-    </div>
+            {totalImages !== 0 && searchTerm &&
+              <div className='mt-12 flex justify-center'>
+                <Scroll to='top' smooth duration={1000}>
+                  <span className='directional-button'>
+                    {t('backToTop')} <ArrowUpIcon className='w-5 h-5 ml-2' />
+                  </span>
+                </Scroll>
+              </div>
+            }
+          </section>
+        </main>
+        <Footer />
+      </div>
+    </AnimatedPage>
   );
 }
 
