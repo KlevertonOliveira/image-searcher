@@ -2,7 +2,7 @@ import { LinkIcon } from '@heroicons/react/solid';
 import { useTranslation } from 'react-i18next';
 import { Image } from '../../types/Image';
 
-function ImageInfo({ image }: { image: Image; }) {
+function ImageDetails({ image }: { image: Image; }) {
 
   const { t } = useTranslation();
 
@@ -47,4 +47,4 @@ function ImageInfo({ image }: { image: Image; }) {
   );
 }
 
-export default ImageInfo;
+export default ImageDetails;

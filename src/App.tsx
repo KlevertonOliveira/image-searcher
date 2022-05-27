@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import ImageDetails from './pages/ImageDetails';
+import ImageInfo from './pages/ImageInfo';
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/images/:imageId' element={<ImageDetails />} />
+        <Route path='/images/:imageId' element={<ImageInfo />} />
       </Routes>
     </BrowserRouter>
   );

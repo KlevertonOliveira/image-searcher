@@ -43,7 +43,7 @@ function Pagination({ currentPage, onChangePage, totalImages }: PaginationProps)
           {Array(totalNumberOfPages).fill('').map((_, index) => (
             <li key={index + 1}>
               <Scroll to='top' smooth duration={1000} onClick={() => onChangePage(index + 1)}>
-                <span className={`page ${index + 1 === currentPage && 'active'}`}>
+                <span className={`page ${index + 1 === currentPage && 'active-page'}`}>
                   {index + 1}
                 </span>
               </Scroll>
