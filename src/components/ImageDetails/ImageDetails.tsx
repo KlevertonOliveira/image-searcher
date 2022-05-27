@@ -36,7 +36,7 @@ function ImageDetails({ image }: { image: Image; }) {
             <div key={key}>
               <span className='property-title'>{t(key)}: </span>
               <span className='property-value'>
-                {typeof value === 'number' ? value.toLocaleString() : value}
+                {typeof value === 'number' ? value.toLocaleString() : t(value)}
               </span>
             </div>
           );
