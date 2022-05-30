@@ -15,7 +15,10 @@ function ImageCard({ image }: ImageCardProps) {
     <div className='rounded-lg w-full h-[250px]'>
       <div className="rounded-lg shadow-lg bg-white relative h-full">
         <Link to={`/images/${image.id}`}>
-          <img className="rounded-lg overflow-hidden h-full w-full object-cover object-top" src={image.imageURL} alt={image.tags} />
+          <img
+            className="rounded-lg overflow-hidden h-full w-full object-cover object-top"
+            src={image.imageURL}
+            alt={image.tags} />
         </Link>
         <div className='absolute bottom-0 right-0 text-white w-full p-3 bg-[rgba(0,0,0,0.7)] rounded flex justify-between'>
           <div className='flex flex-col gap-1'>

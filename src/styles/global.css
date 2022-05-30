@@ -13,10 +13,6 @@
 
 @layer components {
   
-  .searcher {
-    @apply rounded py-[6px] px-2 font-bold text-neutral-500 dark:bg-neutral-500 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-300 focus-details;
-  }
-
   .dropdown-menu-item {
     @apply w-full rounded flex items-center gap-1 px-2 py-1 bg-white text-neutral-600 dark:bg-neutral-500 dark:text-white hover:bg-accent-light-hover hover:text-white dark:hover:bg-neutral-400 transition-colors;
   }
@@ -42,7 +38,7 @@
   }
 
   .property-value {
-    @apply font-medium text-lg sm:text-xl ml-2 text-neutral-500 dark:text-neutral-200;
+    @apply font-medium text-lg sm:text-xl ml-1 text-neutral-500 dark:text-neutral-200;
   }
 }
 

@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import SearchInput from '../components/Header/SearchInput';
 import ImageGallery from '../components/ImageGallery';
 import ImageTypeSelector from '../components/ImageTypeSelector';
+import Loading from '../components/Loading';
 import NoImageResult from '../components/NoImageResult';
 import OrderSelector from '../components/OrderSelector';
 import Pagination from '../components/Pagination';
@@ -65,38 +66,43 @@ function Home() {
         <main className='flex-1'>
           <section className='max-w-6xl mx-auto px-4 py-12'>
             <div className='bg-white dark:bg-neutral-700 py-8 px-4 rounded-lg'>
-              {imageList.length === 0 ?
-                (searchTerm ? <NoImageResult userHasTyped /> : <NoImageResult />)
+              {isFetching ?
+                (<Loading />)
                 :
-                (<>
-                  <div className="flex flex-wrap gap-4 sm:gap-8 justify-between overflow-hidden items-center">
-                    <h2 className=' text-2xl font-semibold py-2 text-[#6096BA] dark:text-neutral-400 lg:text-3xl gap-2 flex flex-wrap'>
-                      {t('searchingFor')}:
-                      <span className='text-neutral-500 dark:text-white'>
-                        {searchTerm}
-                      </span>
-                    </h2>
-                    <div className='flex gap-4 flex-wrap p-2'>
-                      <OrderSelector orderOption={orderBy} onOrderOptionChange={setOrderBy} />
-                      <ImageTypeSelector imageType={imageType} onChangeImageType={setImageType} />
+                (imageList.length === 0 ?
+                  (searchTerm ? <NoImageResult userHasTyped /> : <NoImageResult />)
+                :
+                  (<>
+                    <div className="flex flex-wrap gap-4 sm:gap-8 justify-between overflow-hidden items-center">
+                      <h2 className=' text-2xl font-semibold py-2 text-accent-light dark:text-neutral-400 lg:text-3xl gap-2 flex flex-wrap'>
+                        {t('searchingFor')}:
+                        <span className='text-neutral-500 dark:text-white'>
+                          {searchTerm}
+                        </span>
+                      </h2>
+                      <div className='flex gap-4 flex-wrap p-2'>
+                        <OrderSelector orderOption={orderBy} onOrderOptionChange={setOrderBy} />
+                        <ImageTypeSelector imageType={imageType} onChangeImageType={setImageType} />
+                      </div>
                     </div>
-                  </div>
-                  <ImageGallery imageList={imageList} />
-                  <Pagination
-                    currentPage={currentPage}
-                    onChangePage={setCurrentPage}
-                    totalImages={totalImages}
-                  />
-                </>
+                    <ImageGallery imageList={imageList} />
+                    <Pagination
+                      currentPage={currentPage}
+                      onChangePage={setCurrentPage}
+                      totalImages={totalImages}
+                    />
+                  </>
+                  )
                 )
               }
             </div>
             {totalImages !== 0 && searchTerm &&
               <div className='mt-12 flex justify-center'>
                 <Scroll to='top' smooth duration={1000}>
-                  <span className='directional-button'>
-                    {t('backToTop')} <ArrowUpIcon className='w-5 h-5 ml-2' />
-                  </span>
+                  <button className='directional-button focus-visible:focus-details'>
+                    <ArrowUpIcon className='w-5 h-5 mr-2' />
+                    <span>{t('backToTop')}</span>
+                  </button>
                 </Scroll>
               </div>
             }

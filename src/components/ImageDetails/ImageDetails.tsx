@@ -1,18 +1,23 @@
 import { LinkIcon } from '@heroicons/react/solid';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Image } from '../../types/Image';
+import Loading from '../Loading';
 
 function ImageDetails({ image }: { image: Image; }) {
 
   const { t } = useTranslation();
+  const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className='flex flex-wrap gap-8'>
-      <div className='max-w-lg max-h-96'>
+    <article className='flex flex-col gap-8'>
+      <div className='h-full w-full min-h-[15rem]'>
+        {loaded ? null : <Loading />}
         <img
           src={image.imageURL}
           alt={image.tags}
-          className='bg-white rounded-lg h-full w-full object-cover object-top'
+          onLoad={() => setLoaded(true)}
+          className='bg-white rounded-lg h-full w-full object-cover'
         />
       </div>
       <div className='m-2 flex h-full justify-center flex-col gap-3'>
@@ -24,7 +29,7 @@ function ImageDetails({ image }: { image: Image; }) {
               <div key={key}>
                 <span className='property-title flex items-center'>
                   {t(key)}:
-                  <a className='property-value' href={value as string} target='_blank'>
+                  <a className='property-value focus-visible:focus-details' href={value as string} target='_blank'>
                     <LinkIcon className='w-5 h-5' />
                   </a>
                 </span>
@@ -41,9 +46,8 @@ function ImageDetails({ image }: { image: Image; }) {
             </div>
           );
         })}
-
       </div>
-    </div>
+    </article>
   );
 }
 
