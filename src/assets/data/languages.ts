@@ -1,12 +1,12 @@
 export const languages = {
   en: {
     code: 'en',
-    name: 'en-us',
+    name: 'en-US',
     flag: '🇺🇸'
   },
   pt: {
-      code: 'pt',
-      name: 'pt-br',
-      flag: '🇧🇷'
+    code: 'pt',
+    name: 'pt-BR',
+    flag: '🇧🇷'
   }
 };

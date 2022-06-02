@@ -34,5 +34,9 @@
   "likes": "Likes",
   "downloads": "Downloads",
   "imageURL": "Image URL",
-  "pageURL": "Page URL"
+  "pageURL": "Page URL",
+  "visit": "Visit",
+  "pageNotFound": "Page Not Found",
+  "notFoundDescription": "Please, check the URL in the address bar and try again.",
+  "backToHome": "Back to Home"
 }

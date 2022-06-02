@@ -32,7 +32,7 @@ function Pagination({ currentPage, onChangePage, totalImages }: PaginationProps)
             <Scroll to='top' smooth duration={1000} onClick={() => onChangePage(currentPage - 1)}>
               <button
                 disabled={currentPage === 1}
-                className={`page ${currentPage === 1 && 'page-disabled'}`}
+                className={`page ${currentPage === 1 && 'page-disabled'} focus-visible:focus-details`}
                 aria-label={t('previousPage')}
                 title={t('previousPage')}
               >
@@ -43,9 +43,9 @@ function Pagination({ currentPage, onChangePage, totalImages }: PaginationProps)
           {Array(totalNumberOfPages).fill('').map((_, index) => (
             <li key={index + 1}>
               <Scroll to='top' smooth duration={1000} onClick={() => onChangePage(index + 1)}>
-                <span className={`page ${index + 1 === currentPage && 'active-page'}`}>
+                <button className={`page ${index + 1 === currentPage && 'active-page'} focus-visible:focus-details`}>
                   {index + 1}
-                </span>
+                </button>
               </Scroll>
             </li>
           ))}
@@ -53,7 +53,7 @@ function Pagination({ currentPage, onChangePage, totalImages }: PaginationProps)
             <Scroll to='top' smooth duration={1000} onClick={() => onChangePage(currentPage + 1)}>
               <button
                 disabled={currentPage === totalNumberOfPages}
-                className={`page ${currentPage === totalNumberOfPages && 'page-disabled'}`}
+                className={`page ${currentPage === totalNumberOfPages && 'page-disabled'} focus-visible:focus-details`}
                 aria-label={t('nextPage')}
                 title={t('nextPage')}
               >

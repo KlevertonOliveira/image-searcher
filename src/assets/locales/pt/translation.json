@@ -34,5 +34,9 @@
   "likes": "Curtidas",
   "downloads": "Transferências",
   "imageURL": "URL da Imagem",
-  "pageURL": "URL da Página"
+  "pageURL": "URL da Página",
+  "visit": "Visitar",
+  "pageNotFound": "Página Indisponível",
+  "notFoundDescription": "Por favor, verifique o URL na barra de endereço e tente novamente.",
+  "backToHome": "Voltar ao Início"
 }

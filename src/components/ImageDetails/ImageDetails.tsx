@@ -2,7 +2,6 @@ import { LinkIcon } from '@heroicons/react/solid';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Image } from '../../types/Image';
-import Loading from '../Loading';
 
 function ImageDetails({ image }: { image: Image; }) {
 
@@ -12,7 +11,6 @@ function ImageDetails({ image }: { image: Image; }) {
   return (
     <article className='flex flex-col gap-8'>
       <div className='h-full w-full min-h-[15rem]'>
-        {loaded ? null : <Loading />}
         <img
           src={image.imageURL}
           alt={image.tags}
@@ -29,7 +27,12 @@ function ImageDetails({ image }: { image: Image; }) {
               <div key={key}>
                 <span className='property-title flex items-center'>
                   {t(key)}:
-                  <a className='property-value focus-visible:focus-details' href={value as string} target='_blank'>
+                  <a
+                    className='property-value focus-visible:focus-details'
+                    href={value as string}
+                    target='_blank'
+                    title={`${t('visit')} ${t(key)}`}
+                  >
                     <LinkIcon className='w-5 h-5' />
                   </a>
                 </span>

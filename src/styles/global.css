@@ -14,7 +14,7 @@
 @layer components {
   
   .dropdown-menu-item {
-    @apply w-full rounded flex items-center gap-1 px-2 py-1 bg-white text-neutral-600 dark:bg-neutral-500 dark:text-white hover:bg-accent-light-hover hover:text-white dark:hover:bg-neutral-400 transition-colors;
+    @apply w-full flex items-center gap-1 px-2 py-1 bg-white text-neutral-500 dark:bg-neutral-500 dark:text-white hover:bg-accent-light-hover hover:text-white dark:hover:bg-neutral-400 transition-colors;
   }
   
   .selector-label {
@@ -49,7 +49,7 @@
   }
 
   .focus-details {
-    @apply focus:outline-none focus:border-neutral-400 focus:ring-2 focus:ring-offset-2 focus:ring-offset-neutral-500 focus:ring-neutral-300 dark:focus:ring-offset-zinc-900 dark:focus:ring-neutral-400 transition-colors;
+    @apply focus:outline-none border-none focus:ring-4 focus:ring-focus-light dark:focus:ring-focus-dark;
   }
 
   .active-page {

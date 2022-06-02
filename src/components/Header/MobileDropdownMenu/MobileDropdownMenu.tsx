@@ -5,7 +5,7 @@ import { languages } from '../../../assets/data/languages';
 import { useLanguage } from '../../../hooks/useLanguage';
 import { useTheme } from '../../../hooks/useTheme';
 
-function DropdownMenu() {
+function MobileDropdownMenu() {
 
   const { theme, toggleTheme } = useTheme();
   const { language, toggleLanguage } = useLanguage();
@@ -80,4 +80,4 @@ function DropdownMenu() {
   );
 }
 
-export default DropdownMenu;
+export default MobileDropdownMenu;
