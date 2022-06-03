@@ -14,15 +14,15 @@ function NoImageResult({ userHasTyped }: NoImageResultProps) {
   return !userHasTyped ?
     (<NoImageResultFeedback
       imgSrc={codeTypingImg}
-      imgAlt={t('codeTypingImgAlt')}
-      content={t('startTyping')}
+      imgAlt={t('noImageResult.codeTypingImgAlt')}
+      content={t('noImageResult.startTyping')}
     />
     )
     :
     (<NoImageResultFeedback
       imgSrc={noResultImg}
-      imgAlt={t('noResultImgAlt')}
-      content={t('noResultsFound')}
+      imgAlt={t('noImageResult.emptyResultsImgAlt')}
+      content={t('noImageResult.emptyResults')}
     />
     );
 }

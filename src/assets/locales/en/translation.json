@@ -1,42 +1,99 @@
 {
-  "searcher": "Searcher",
-  "search": "search",
-  "clearSearch": "Clear search",
-  "language": "Change language",
-  "switchLightMode": "Switch to Light Mode",
-  "switchDarkMode": "Switch to Dark Mode",
-  "lightMode": "light mode",
-  "darkMode": "dark mode",
-  "startTyping": "Start typing to begin your search!",
-  "codeTypingImgAlt" : "Hands typing code into a computer's keyboard.",
-  "noResultsFound":"No Results Found :(",
-  "noResultImgAlt" : "Illustration of a woman holding an empty box.",
-  "searchingFor": "Searching for",
-  "orderBy": "Order By",
-  "popular": "Popular",
-  "latest": "Latest",
-  "typeCategory": "Type",
-  "all": "All",
-  "photo": "Photo",
-  "illustration": "Illustration",
-  "vector": "Vector",
-  "by": "By",
-  "more": "More",
-  "previousPage": "Previous page",
-  "nextPage": "Next page",
-  "backToTop": "Back to Top",
-  "allRightsReserved": "All rights reserved",
-  "back": "Back",
-  "author": "Author",
-  "tags": "Tags",
-  "type": "Type",
-  "views": "Views",
-  "likes": "Likes",
-  "downloads": "Downloads",
-  "imageURL": "Image URL",
-  "pageURL": "Page URL",
-  "visit": "Visit",
-  "pageNotFound": "Page Not Found",
-  "notFoundDescription": "Please, check the URL in the address bar and try again.",
-  "backToHome": "Back to Home"
+  "header": {
+    "searcher": "Searcher"
+  },
+
+  "searchInput": {
+    "search": "search",
+    "clearSearch": "Clear search"
+  },
+
+  "languageMenu": {
+    "languageOptions": "Language Options",
+    "en-US": "American English",
+    "pt-BR": "Brazilian Portuguese",
+    "toggleLanguage": "Change language"
+  },
+
+  "themeSwitcher": {
+    "switchLightMode": "Switch to Light Mode",
+    "switchDarkMode": "Switch to Dark Mode",
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode"
+  },
+
+  "noImageResult": {
+    "startTyping": "Start typing to begin your search!",
+    "codeTypingImgAlt" : "Hands typing code into a computer's keyboard.",
+    "emptyResults":"No Results Found :(",
+    "emptyResultsImgAlt" : "Illustration of a woman holding an empty box."
+  },
+
+  "homepage": {
+    "searchingFor": "Searching for"
+  },
+
+  "orderSelector": {
+    "orderBy": "Order By",
+    "popular": "Popular",
+    "latest": "Latest"
+  },
+
+  "imageTypeSelector": {
+    "typeCategory": "Type",
+    "all": "All",
+    "photo": "Photo",
+    "illustration": "Illustration",
+    "vector": "Vector"
+  },
+
+  "imageOverlay": {
+    "by": "By",
+    "more": "More"
+  },
+
+  "pagination": {
+    "previousPage": "Previous page",
+    "page": "Page",
+    "nextPage": "Next page"
+  },
+
+  "navigationButtons": {
+    "backToTop": "Back to Top",
+    "back": "Back",
+    "backToHome": "Back to Home"
+  },
+  
+  "footer": {
+    "allRightsReserved": "All rights reserved"
+  },
+
+  "imageDetails": {
+    "author": "Author",
+    "tags": "Tags",
+    "type": "Type",
+    "views": "Views",
+    "likes": "Likes",
+    "downloads": "Downloads",
+    "imageURL": "Image URL",
+    "pageURL": "Page URL",
+    "visit": "Visit",
+    "photo": "Photo",
+    "illustration": "Illustration",
+    "vector": "Vector"
+  },
+
+  "notFoundPage": {
+    "title": "Page Not Found",
+    "description": "Please, check the URL in the address bar and try again."
+  },
+
+  "pagesHead": {
+    "homepageTitle": "Searcher | Home",
+    "homepageDescription": "Homepage of Image Searcher",
+    "notFoundPageTitle": "Searcher | Page Not Found",
+    "notFoundPageDescription": "Not found page of Image Searcher",
+    "imageInfoPageTitle": "Searcher | #",
+    "imageInfoPageDescription": "Details page of search result of Image Searcher"
+  }
 }

@@ -29,7 +29,7 @@
     @apply h-10 w-10 flex justify-center cursor-pointer items-center rounded-lg shadow-md bg-white hover:bg-neutral-100 text-neutral-500 dark:bg-neutral-600 dark:hover:bg-neutral-500 dark:text-white transition-colors
   }
 
-  .directional-button {
+  .navigation-button {
     @apply bg-accent-light dark:bg-neutral-600 py-2 px-4 rounded-md hover:bg-accent-light-hover dark:hover:bg-neutral-500 transition-colors cursor-pointer font-semibold text-base sm:text-lg text-white flex gap-1 items-center shadow-lg;
   }
 

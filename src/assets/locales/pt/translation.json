@@ -1,42 +1,99 @@
 {
-  "searcher": "Buscador",
-  "search": "buscar",
-  "clearSearch": "Limpar busca",
-  "language": "Mudar idioma",
-  "switchLightMode": "Mudar para tema claro",
-  "switchDarkMode": "Mudar para tema escuro",
-  "lightMode": "tema claro",
-  "darkMode": "tema escuro",
-  "startTyping": "Comece a digitar para iniciar sua busca!",
-  "codeTypingImgAlt" : "Mãos digitando código em um teclado de computador.",
-  "noResultsFound":"Nenhum resultado encontrado :(",
-  "noResultImgAlt" : "Ilustração de uma mulher segurando uma caixa vazia.",
-  "searchingFor": "Buscando por",
-  "orderBy": "Ordenar por",
+  "header": {
+    "searcher": "Buscador"
+  },
+
+  "searchInput": {
+    "search": "buscar",
+    "clearSearch": "Limpar busca"
+  },
+
+  "languageMenu": {
+    "languageOptions": "Opções de Idioma",
+    "en-US": "Inglês Americano",
+    "pt-BR": "Português Brasileiro",
+    "toggleLanguage": "Mudar Idioma"
+  },
+
+  "themeSwitcher": {
+    "switchLightMode": "Mudar para tema claro",
+    "switchDarkMode": "Mudar para tema escuro",
+    "lightMode": "Tema claro",
+    "darkMode": "Tema escuro"
+  },
+
+  "noImageResult": {
+    "startTyping": "Comece a digitar para iniciar sua busca!",
+    "codeTypingImgAlt" : "Mãos digitando código em um teclado de computador.",
+    "emptyResults":"Nenhum resultado encontrado :(",
+    "emptyResultsImgAlt" : "Ilustração de uma mulher segurando uma caixa vazia."
+  },
+
+  "homepage": {
+    "searchingFor": "Buscando por"
+  },
+
+  "orderSelector": {
+    "orderBy": "Ordenar por",
   "popular": "Populares",
-  "latest": "Recentes",
-  "typeCategory": "Categoria",
-  "all": "Tudo",
-  "photo": "Foto",
-  "illustration": "Ilustração",
-  "vector": "Vetor",
-  "by": "Por",
-  "more": "Mais",
-  "previousPage": "Página anterior",
-  "nextPage": "Próxima página",
-  "backToTop": "Voltar ao topo",
-  "allRightsReserved": "Todos os direitos reservados",
-  "back": "Voltar",
-  "author": "Autor",
-  "tags": "Marcadores",
-  "type": "Categoria",
-  "views": "Visualizações",
-  "likes": "Curtidas",
-  "downloads": "Transferências",
-  "imageURL": "URL da Imagem",
-  "pageURL": "URL da Página",
-  "visit": "Visitar",
-  "pageNotFound": "Página Indisponível",
-  "notFoundDescription": "Por favor, verifique o URL na barra de endereço e tente novamente.",
-  "backToHome": "Voltar ao Início"
+  "latest": "Recentes"
+},
+
+"imageTypeSelector": {
+    "typeCategory": "Categoria",
+    "all": "Tudo",
+    "photo": "Foto",
+    "illustration": "Ilustração",
+    "vector": "Vetor"
+  },
+  
+  "imageOverlay": {
+    "by": "Por",
+    "more": "Mais"
+  },
+
+  "pagination": {
+    "previousPage": "Página anterior",
+    "page": "Página",
+    "nextPage": "Próxima página"
+  },
+  
+  "navigationButtons": {
+    "backToTop": "Voltar ao topo",
+    "back": "Voltar",
+    "backToHome": "Voltar ao Início"
+  },
+  
+  "footer": {
+    "allRightsReserved": "Todos os direitos reservados"
+  },
+
+  "imageDetails": {
+    "author": "Autor",
+    "tags": "Marcadores",
+    "type": "Categoria",
+    "views": "Visualizações",
+    "likes": "Curtidas",
+    "downloads": "Transferências",
+    "imageURL": "URL da Imagem",
+    "pageURL": "URL da Página",
+    "visit": "Visitar",
+    "photo": "Foto",
+    "illustration": "Ilustração",
+    "vector": "Vetor"
+  },
+
+  "notFoundPage": {
+    "title": "Página Indisponível",
+    "description": "Por favor, verifique o URL na barra de endereço e tente novamente."
+  },
+
+  "pagesHead": {
+    "homepageTitle": "Buscador | Início",
+    "homepageDescription": "Página Inicial do Buscador de Imagem",
+    "notFoundPageTitle": "Buscador | Página Indisponível",
+    "notFoundPageDescription": "Página não encontrada do Buscador de Imagem",
+    "imageInfoPageTitle": "Buscador | #",
+    "imageInfoPageDescription": "Página de detalhes do resultado da busca do Buscador de Imagem"
+  }
 }

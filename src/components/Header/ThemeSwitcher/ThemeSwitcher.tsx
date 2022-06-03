@@ -12,7 +12,7 @@ function ThemeSwitcher() {
     <button
       onClick={toggleTheme}
       className='rounded-full p-1 hover:bg-black transition-colors duration-200 dark:hover:bg-accent-light dark:hover:text-yellow-300 focus-visible:focus-details'
-      title={theme === 'light' ? t('switchDarkMode') : t('switchLightMode')}
+      title={theme === 'light' ? t('themeSwitcher.switchDarkMode') : t('themeSwitcher.switchLightMode')}
     >
       {theme === 'light' ? <MoonIcon className='h-7 w-7' /> : <SunIcon className='h-7 w-7' />}
     </button>

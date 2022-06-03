@@ -19,7 +19,7 @@ i18n
       }
     },
     fallbackLng: 'en',
-    debug: true,
+    debug: false,
 
     interpolation: {
       escapeValue: false,

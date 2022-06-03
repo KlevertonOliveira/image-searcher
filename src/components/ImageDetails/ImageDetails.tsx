@@ -26,12 +26,12 @@ function ImageDetails({ image }: { image: Image; }) {
             return (
               <div key={key}>
                 <span className='property-title flex items-center'>
-                  {t(key)}:
+                  {t(`imageDetails.${key}`)}:
                   <a
                     className='property-value focus-visible:focus-details'
                     href={value as string}
                     target='_blank'
-                    title={`${t('visit')} ${t(key)}`}
+                    title={`${t('imageDetails.visit')} ${t(`imageDetails.${key}`)}`}
                   >
                     <LinkIcon className='w-5 h-5' />
                   </a>
@@ -42,9 +42,13 @@ function ImageDetails({ image }: { image: Image; }) {
 
           return (
             <div key={key}>
-              <span className='property-title'>{t(key)}: </span>
+              <span className='property-title'>{t(`imageDetails.${key}`)}: </span>
               <span className='property-value'>
-                {typeof value === 'number' ? value.toLocaleString() : t(value)}
+                {typeof value === 'number' ?
+                  (value.toLocaleString())
+                  :
+                  (key === 'type' ? t(`imageDetails.${value}`) : t(value))
+                }
               </span>
             </div>
           );

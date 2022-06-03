@@ -22,12 +22,12 @@ function Header({ children }: HeaderProps) {
           <CameraIcon className='h-7 w-7 hover:scale-125 transition-transform duration-300 ease-in-out hover:animate-pulse' />
           <button
             className={
-              `font-bold text-lg tracking-wider focus-visible:focus-details
+              `font-bold text-lg tracking-wider rounded hover:opacity-80 transition-opacity focus-visible:focus-details
                ${children ? 'hidden md:inline sm:text-xl' : 'inline xs:text-xl'}`
             }
             onClick={() => { navigate('/'); }}
           >
-            {t('searcher')}
+            {t('header.searcher')}
           </button>
         </div>
         {children}

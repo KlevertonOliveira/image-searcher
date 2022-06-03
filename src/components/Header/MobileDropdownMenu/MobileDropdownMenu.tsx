@@ -32,7 +32,7 @@ function MobileDropdownMenu() {
             {({ active }) => (
               <button
                 className={`dropdown-menu-item py-2 ${active && 'dropdown-menu-item-active'}`}
-                title={theme === 'light' ? t('switchDarkMode') : t('switchLightMode')}
+                title={theme === 'light' ? t('themeSwitcher.switchDarkMode') : t('themeSwitcher.switchLightMode')}
                 onClick={toggleTheme}
               >
                 {theme === 'light' ?
@@ -56,7 +56,7 @@ function MobileDropdownMenu() {
               <button
                 className={`dropdown-menu-item text-xl ${active && 'dropdown-menu-item-active'}`}
                 onClick={toggleLanguage}
-                title={t('language')}
+                title={t('languageMenu.toggleLanguage')}
               >
                 {language === 'en' ?
                   <div className='flex gap-1 items-center'>

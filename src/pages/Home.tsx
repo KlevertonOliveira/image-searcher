@@ -1,6 +1,8 @@
 import { ArrowUpIcon } from '@heroicons/react/solid';
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 import { Link as Scroll } from 'react-scroll';
 import AnimatedPage from '../components/AnimatedPage';
 import Footer from '../components/Footer';
@@ -29,6 +31,7 @@ function Home() {
   const [isFetching, setIsFetching] = useState(false);
 
   const { t } = useTranslation();
+  const location = useLocation();
 
   async function retrieveImageList() {
     setIsFetching(true);
@@ -59,7 +62,14 @@ function Home() {
 
   return (
     <AnimatedPage>
-      <div className='flex flex-col min-h-screen'>
+      <Helmet>
+        <meta charSet='utf-8' />
+        <title>{t('pagesHead.homepageTitle')}</title>
+        <meta name='description' content={t('pagesHead.homepageDescription')} />
+        <link rel="shortcut icon" href="/src/assets/images/favicon.ico" type="image/x-icon" />
+      </Helmet>
+
+      <div className='flex flex-col min-h-screen' data-testid='home'>
         <Header>
           <SearchInput onChangeSearchTerm={setSearchTerm} />
         </Header>
@@ -71,11 +81,11 @@ function Home() {
                 :
                 (imageList.length === 0 ?
                   (searchTerm ? <NoImageResult userHasTyped /> : <NoImageResult />)
-                :
+                  :
                   (<>
                     <div className="flex flex-wrap gap-4 sm:gap-8 justify-between overflow-hidden items-center">
                       <h2 className=' text-2xl font-semibold py-2 text-accent-light dark:text-neutral-400 lg:text-3xl gap-2 flex flex-wrap'>
-                        {t('searchingFor')}:
+                        {t('homepage.searchingFor')}:
                         <span className='text-neutral-500 dark:text-white'>
                           {searchTerm}
                         </span>
@@ -99,9 +109,9 @@ function Home() {
             {totalImages !== 0 && searchTerm &&
               <div className='mt-12 flex justify-center'>
                 <Scroll to='top' smooth duration={1000}>
-                  <button className='directional-button focus-visible:focus-details'>
+                  <button className='navigation-button focus-visible:focus-details'>
                     <ArrowUpIcon className='w-5 h-5 mr-2' />
-                    <span>{t('backToTop')}</span>
+                    <span>{t('navigationButtons.backToTop')}</span>
                   </button>
                 </Scroll>
               </div>

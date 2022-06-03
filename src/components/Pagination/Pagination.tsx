@@ -33,15 +33,15 @@ function Pagination({ currentPage, onChangePage, totalImages }: PaginationProps)
               <button
                 disabled={currentPage === 1}
                 className={`page ${currentPage === 1 && 'page-disabled'} focus-visible:focus-details`}
-                aria-label={t('previousPage')}
-                title={t('previousPage')}
+                aria-label={t('pagination.previousPage')}
+                title={t('pagination.previousPage')}
               >
                 <ChevronLeftIcon className='h-5 w-5' />
               </button>
             </Scroll>
           </li>
           {Array(totalNumberOfPages).fill('').map((_, index) => (
-            <li key={index + 1}>
+            <li key={index + 1} title={`${t('pagination.page')} ${index + 1}`}>
               <Scroll to='top' smooth duration={1000} onClick={() => onChangePage(index + 1)}>
                 <button className={`page ${index + 1 === currentPage && 'active-page'} focus-visible:focus-details`}>
                   {index + 1}
@@ -54,8 +54,8 @@ function Pagination({ currentPage, onChangePage, totalImages }: PaginationProps)
               <button
                 disabled={currentPage === totalNumberOfPages}
                 className={`page ${currentPage === totalNumberOfPages && 'page-disabled'} focus-visible:focus-details`}
-                aria-label={t('nextPage')}
-                title={t('nextPage')}
+                aria-label={t('pagination.nextPage')}
+                title={t('pagination.nextPage')}
               >
                 <ChevronRightIcon className='h-5 w-5' />
               </button>

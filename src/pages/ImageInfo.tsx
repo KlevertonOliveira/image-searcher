@@ -1,5 +1,6 @@
 import { ArrowLeftIcon } from '@heroicons/react/solid';
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import AnimatedPage from '../components/AnimatedPage';
@@ -48,6 +49,12 @@ function ImageInfo() {
 
   return (
     <AnimatedPage>
+      <Helmet>
+        <meta charSet='utf-8' />
+        <title>{`${t('pagesHead.imageInfoPageTitle')}${imageId}`}</title>
+        <meta name="description" content={t('pagesHead.imageInfoPageDescription')} />
+        <link rel="shortcut icon" href="/src/assets/images/favicon.ico" type="image/x-icon" />
+      </Helmet>
       <div className='flex flex-col min-h-screen'>
         <Header />
         <main className='flex-1 flex justify-center'>
@@ -58,9 +65,9 @@ function ImageInfo() {
               }
             </section>
             <div className='mx-auto'>
-              <button onClick={() => navigate('/')} className='directional-button focus-visible:focus-details'>
+              <button onClick={() => navigate('/')} className='navigation-button focus-visible:focus-details'>
                 <ArrowLeftIcon className='w-5 h-5 mr-2' />
-                <span>{t('back')}</span>
+                <span>{t('navigationButtons.back')}</span>
               </button>
             </div>
           </div>

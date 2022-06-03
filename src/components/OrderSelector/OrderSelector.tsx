@@ -12,14 +12,14 @@ function OrderSelector({ orderOption, onOrderOptionChange }: SortSelectorProps) 
 
   return (
     <div className='flex flex-col'>
-      <label htmlFor="orderBy" className='selector-label'>{t('orderBy')}:</label>
+      <label htmlFor="orderBy" className='selector-label'>{t('orderSelector.orderBy')}:</label>
       <select
         id='orderBy'
         value={orderOption}
         onChange={(e) => onOrderOptionChange(e.target.value as OrderOptions)}
         className='selector'
       >
-        {orderOptions.map(option => <option key={option} value={option}>{t(option)}</option>)}
+        {orderOptions.map(option => <option key={option} value={option}>{t(`orderSelector.${option}`)}</option>)}
       </select>
     </div>
   );
