@@ -20,7 +20,7 @@ function ImageCard({ image }: ImageCardProps) {
           to={`/images/${image.id}`}
         >
           <img
-            className="overflow-hidden h-full w-full object-cover object-top hover:scale-110 transition-transform duration-300"
+            className="overflow-hidden h-full w-full object-cover object-top hover:scale-110 transition-transform duration-500"
             src={image.imageURL}
             alt={image.tags} />
         </Link>

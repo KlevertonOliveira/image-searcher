@@ -10,15 +10,12 @@ export const ThemeContext = createContext({} as ThemeContextData);
 
 export function ThemeProvider({ children }: { children: ReactNode; }) {
 
-  const [theme, setTheme] = useState<Theme>('dark');
+  const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
-    const storedTheme = localStorage.getItem('theme');
-
-    if (storedTheme) {
-      document.documentElement.classList.add(storedTheme);
-      setTheme(storedTheme as Theme);
-    }
+    const currentTheme = localStorage.getItem('theme') ?? theme;
+    document.documentElement.classList.add(currentTheme);
+    setTheme(currentTheme as Theme);
   }, []);
 
   function saveNewTheme(newTheme: Theme) {

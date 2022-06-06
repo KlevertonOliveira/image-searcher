@@ -39,7 +39,7 @@ function LanguageDropdownMenu() {
                 >
                   <span className='text-xl'>{value.flag}</span>
                   <span className={`${language === value.code ? 'font-semibold' : 'font-medium'}`}>{value.name}</span>
-                  {language === value.code && <span><CheckIcon className='w-5 h-5' /></span>}
+                  {(language === value.code) && <span><CheckIcon className='w-5 h-5' /></span>}
                 </button>
               )}
             </Menu.Item>
