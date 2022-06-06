@@ -19,7 +19,8 @@
     "switchLightMode": "Mudar para tema claro",
     "switchDarkMode": "Mudar para tema escuro",
     "lightMode": "Tema claro",
-    "darkMode": "Tema escuro"
+    "darkMode": "Tema escuro",
+    "switcher": "Modificador de Tema"
   },
 
   "noImageResult": {

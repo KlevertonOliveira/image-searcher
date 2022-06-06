@@ -1,20 +1,17 @@
 import { LinkIcon } from '@heroicons/react/solid';
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Image } from '../../types/Image';
 
 function ImageDetails({ image }: { image: Image; }) {
 
   const { t } = useTranslation();
-  const [loaded, setLoaded] = useState(false);
 
   return (
     <article className='flex flex-col gap-8'>
-      <div className='h-full w-full min-h-[15rem]'>
+      <div className='h-full w-full min-h-[10rem]'>
         <img
           src={image.imageURL}
           alt={image.tags}
-          onLoad={() => setLoaded(true)}
           className='bg-white rounded-lg h-full w-full object-cover'
         />
       </div>

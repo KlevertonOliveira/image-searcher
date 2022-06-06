@@ -27,7 +27,3 @@ describe('Header Component - Language Tests', () => {
     expect(translatedExpression).toBeInTheDocument();
   });
 });
-
-describe('Header Component - Components Tests', () => {
-
-});

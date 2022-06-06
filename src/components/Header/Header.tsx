@@ -1,7 +1,7 @@
 import { CameraIcon } from '@heroicons/react/solid';
 import { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LanguageDropdownMenu from './LanguageDropdownMenu';
 import MobileDropdownMenu from './MobileDropdownMenu';
 import ThemeSwitcher from './ThemeSwitcher';
@@ -20,15 +20,17 @@ function Header({ children }: HeaderProps) {
       <nav className='flex items-center justify-between'>
         <div className="flex items-center gap-2">
           <CameraIcon className='h-7 w-7 hover:scale-125 transition-transform duration-300 ease-in-out hover:animate-pulse' />
-          <button
+          <Link 
             className={
-              `font-bold text-lg tracking-wider rounded hover:opacity-80 transition-opacity focus-visible:focus-details
-               ${children ? 'hidden md:inline sm:text-xl' : 'inline xs:text-xl'}`
-            }
-            onClick={() => { navigate('/'); }}
+              `focus-link rounded-sm
+              ${children ? 'hidden md:inline sm:text-xl' : 'inline xs:text-xl'}`
+            } 
+            to='/'
           >
-            {t('header.searcher')}
-          </button>
+            <span className='font-bold text-lg tracking-wider rounded hover:opacity-80 transition-opacity'>
+              {t('header.searcher')}
+            </span>
+          </Link>
         </div>
         {children}
         <div className={`hidden ${children ? 'md:flex' : 'xs:flex'} gap-1 md:gap-2 items-center`}>

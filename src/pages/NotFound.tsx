@@ -1,24 +1,21 @@
 import { ArrowLeftIcon } from '@heroicons/react/solid';
-import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import AnimatedPage from '../components/AnimatedPage';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import HelmetSEO from '../components/HelmetSEO';
 
 export function NotFound() {
 
-  const navigate = useNavigate();
   const { t } = useTranslation();
 
   return (
     <AnimatedPage>
-      <Helmet>
-        <meta charSet='utf-8' />
-        <title>{t('pagesHead.notFoundPageTitle')}</title>
-        <meta name='description' content={t('pagesHead.notFoundPageDescription')} />
-        <link rel="shortcut icon" href="/src/assets/images/favicon.ico" type="image/x-icon" />
-      </Helmet>
+      <HelmetSEO
+        title={t('pagesHead.notFoundPageTitle')}
+        content={t('pagesHead.notFoundPageDescription')}
+      />
 
       <div className='min-h-screen flex flex-col' data-testid='404'>
         <Header />
@@ -32,15 +29,16 @@ export function NotFound() {
                 <h1 className='text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white tracking-wide'>{t('notFoundPage.title')}</h1>
                 <p className='mt-3 text-sm md:text-base font-light text-neutral-700 dark:text-white tracking-wider'>{t('notFoundPage.description')}</p>
               </div>
-              <button
-                className='mt-3 xs:mt-8 xs:ml-6 navigation-button focus-visible:focus-details'
-                onClick={() => navigate('/')}
+              <Link
+                className='mt-3 xs:mt-8 xs:ml-6 navigation-button w-fit focus-link'
+                to={'/'}
               >
                 <ArrowLeftIcon className='w-5 h-5 mr-2' />
                 <span>{t('navigationButtons.backToHome')}</span>
-              </button>
+              </Link>
             </div>
           </div>
+
         </main>
         <Footer />
       </div>

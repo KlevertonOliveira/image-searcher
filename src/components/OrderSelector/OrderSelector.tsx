@@ -17,7 +17,7 @@ function OrderSelector({ orderOption, onOrderOptionChange }: SortSelectorProps) 
         id='orderBy'
         value={orderOption}
         onChange={(e) => onOrderOptionChange(e.target.value as OrderOptions)}
-        className='selector'
+        className='selector appearance-none'
       >
         {orderOptions.map(option => <option key={option} value={option}>{t(`orderSelector.${option}`)}</option>)}
       </select>

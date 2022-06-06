@@ -1,11 +1,11 @@
 import { ArrowLeftIcon } from '@heroicons/react/solid';
 import { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import AnimatedPage from '../components/AnimatedPage';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import HelmetSEO from '../components/HelmetSEO';
 import ImageDetails from '../components/ImageDetails';
 import Loading from '../components/Loading';
 import NoImageResult from '../components/NoImageResult';
@@ -19,7 +19,6 @@ function ImageInfo() {
 
   let { imageId } = useParams();
   const { t } = useTranslation();
-  const navigate = useNavigate();
 
   async function retrieveImage() {
     setIsLoading(true);
@@ -49,12 +48,10 @@ function ImageInfo() {
 
   return (
     <AnimatedPage>
-      <Helmet>
-        <meta charSet='utf-8' />
-        <title>{`${t('pagesHead.imageInfoPageTitle')}${imageId}`}</title>
-        <meta name="description" content={t('pagesHead.imageInfoPageDescription')} />
-        <link rel="shortcut icon" href="/src/assets/images/favicon.ico" type="image/x-icon" />
-      </Helmet>
+      <HelmetSEO
+        title={`${t('pagesHead.imageInfoPageTitle')}${imageId}`}
+        content={t('pagesHead.imageInfoPageDescription')}
+      />
       <div className='flex flex-col min-h-screen'>
         <Header />
         <main className='flex-1 flex justify-center'>
@@ -65,10 +62,13 @@ function ImageInfo() {
               }
             </section>
             <div className='mx-auto'>
-              <button onClick={() => navigate('/')} className='navigation-button focus-visible:focus-details'>
+              <Link
+                className='navigation-button focus-link'
+                to='/'
+              >
                 <ArrowLeftIcon className='w-5 h-5 mr-2' />
                 <span>{t('navigationButtons.back')}</span>
-              </button>
+              </Link>
             </div>
           </div>
         </main>

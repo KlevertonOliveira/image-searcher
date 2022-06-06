@@ -28,17 +28,19 @@ function SearchInput({ onChangeSearchTerm }: SearchInputProps) {
         placeholder={`${t('searchInput.search')}...`}
         autoFocus
         onChange={(e) => setInputValue(e.target.value)}
-        className='rounded py-[6px] px-2 font-bold text-neutral-500 dark:bg-neutral-500 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-300 focus-details w-full pl-8'
+        className='rounded py-[6px] font-bold text-neutral-500 dark:bg-neutral-500 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-300 focus-details w-full px-8'
         value={inputValue}
       />
       {inputValue && (
-        <button
-          data-testid='clear'
-          title={t('searchInput.clearSearch')}
-          onClick={() => setInputValue('')}
-          className='absolute top-[30%] rounded-full right-2 hover:opacity-70 transition-opacity text-neutral-400 dark:text-white focus-visible:focus-details'>
-          <XIcon className='w-4 h-4' />
-        </button>
+        <div className='absolute h-full inset-y-0 right-2 flex items-center'>
+          <button
+            data-testid='clear'
+            title={t('searchInput.clearSearch')}
+            onClick={() => setInputValue('')}
+            className='rounded-full right-2 hover:opacity-70 transition-opacity text-neutral-400 dark:text-white focus-visible:focus-details'>
+            <XIcon className='w-4 h-4' />
+          </button>
+        </div>
       )}
     </div>
   );

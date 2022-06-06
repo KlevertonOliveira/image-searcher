@@ -1,6 +1,6 @@
 import { ChevronRightIcon } from '@heroicons/react/outline';
 import { useTranslation } from 'react-i18next';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Image } from '../../../types/Image';
 
 type ImageCardProps = {
@@ -10,19 +10,20 @@ type ImageCardProps = {
 function ImageCard({ image }: ImageCardProps) {
 
   const { t } = useTranslation();
-  const navigate = useNavigate();
 
   return (
     <div className='w-full h-[250px]'>
-      <div className="shadow-lg bg-white relative h-full overflow-hidden">
+      <div className="shadow-lg bg-white relative h-full rounded-md">
         <Link
-          className='focus:outline-none focus-visible:outline-4 focus-visible:outline-focus-light dark:focus-visible:outline-focus-dark'
+          className='focus-link'
           to={`/images/${image.id}`}
         >
-          <img
-            className="overflow-hidden h-full w-full object-cover object-top hover:scale-110 transition-transform duration-500"
-            src={image.imageURL}
-            alt={image.tags} />
+          <div className='h-full overflow-hidden'>
+            <img
+              className="overflow-hidden h-full w-full object-cover object-top hover:scale-110 transition-transform duration-500"
+              src={image.imageURL}
+              alt={image.tags} />
+          </div>
         </Link>
 
         {/* Overlay */}
@@ -34,12 +35,15 @@ function ImageCard({ image }: ImageCardProps) {
             </p>
             <p className='text-xs font-medium'>{t('imageOverlay.by')}: {image.author}</p>
           </div>
-          <button
-            className='flex items-center rounded-md h-fit py-1 hover:opacity-70 transition-opacity text-sm font-medium focus-visible:focus-details'
-            onClick={() => navigate(`/images/${image.id}`)}
+          <Link
+            className='focus-link flex items-center rounded-sm hover:opacity-70 transition-opacity'
+            to={`/images/${image.id}`}
           >
-            {t('imageOverlay.more')}
-            <ChevronRightIcon className='h-4 w-4 mt-0.5' /></button>
+            <span className='text-sm font-medium'>
+              {t('imageOverlay.more')}
+            </span>
+            <ChevronRightIcon className='h-4 w-4' />
+          </Link>
         </div>
       </div>
     </div>

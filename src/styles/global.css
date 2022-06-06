@@ -52,6 +52,10 @@
     @apply focus:outline-none border-none focus:ring-4 focus:ring-focus-light dark:focus:ring-focus-dark;
   }
 
+  .focus-link {
+    @apply focus:outline-none focus-visible:outline-4 focus-visible:outline-focus-light dark:focus-visible:outline-focus-dark;
+  }
+
   .active-page {
     @apply bg-accent-light hover:bg-accent-light text-white dark:bg-neutral-400 dark:hover:bg-neutral-400;
   }

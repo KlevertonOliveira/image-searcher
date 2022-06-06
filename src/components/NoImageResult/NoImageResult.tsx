@@ -12,19 +12,20 @@ function NoImageResult({ userHasTyped }: NoImageResultProps) {
   const { t } = useTranslation();
 
   return !userHasTyped ?
-    (<NoImageResultFeedback
+
+    <NoImageResultFeedback
       imgSrc={codeTypingImg}
       imgAlt={t('noImageResult.codeTypingImgAlt')}
       content={t('noImageResult.startTyping')}
     />
-    )
+
     :
-    (<NoImageResultFeedback
+
+    <NoImageResultFeedback
       imgSrc={noResultImg}
       imgAlt={t('noImageResult.emptyResultsImgAlt')}
       content={t('noImageResult.emptyResults')}
     />
-    );
 }
 
 export default NoImageResult;

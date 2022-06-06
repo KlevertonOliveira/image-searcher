@@ -1,13 +1,12 @@
 import { ArrowUpIcon } from '@heroicons/react/solid';
 import { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
 import { Link as Scroll } from 'react-scroll';
 import AnimatedPage from '../components/AnimatedPage';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import SearchInput from '../components/Header/SearchInput';
+import HelmetSEO from '../components/HelmetSEO';
 import ImageGallery from '../components/ImageGallery';
 import ImageTypeSelector from '../components/ImageTypeSelector';
 import Loading from '../components/Loading';
@@ -18,7 +17,7 @@ import { getImageListData } from '../services/getApiData';
 import { Image } from '../types/Image';
 import { ImageTypeOptions } from '../types/ImageTypeOptions';
 import { OrderOptions } from '../types/OrderOptions';
-import { replaceInputWhitespacesWithPlusSign } from '../utils/replaceInputWhitespacesWithPlusSign';
+import { replaceWhitespaceWithPlusSign } from '../utils/replaceWhitespaceWithPlusSign';
 
 function Home() {
 
@@ -31,12 +30,12 @@ function Home() {
   const [isFetching, setIsFetching] = useState(false);
 
   const { t } = useTranslation();
-  const location = useLocation();
 
   async function retrieveImageList() {
     setIsFetching(true);
+
     try {
-      const searchContent = replaceInputWhitespacesWithPlusSign(searchTerm);
+      const searchContent = replaceWhitespaceWithPlusSign(searchTerm);
       const { total, imageList } = await getImageListData(searchContent, orderBy, imageType, currentPage);
       setTotalImages(total);
       setImageList(imageList);
@@ -46,6 +45,7 @@ function Home() {
       setTotalImages(0);
       setImageList([]);
     }
+
     setIsFetching(false);
   }
 
@@ -62,14 +62,12 @@ function Home() {
 
   return (
     <AnimatedPage>
-      <Helmet>
-        <meta charSet='utf-8' />
-        <title>{t('pagesHead.homepageTitle')}</title>
-        <meta name='description' content={t('pagesHead.homepageDescription')} />
-        <link rel="shortcut icon" href="/src/assets/images/favicon.ico" type="image/x-icon" />
-      </Helmet>
+      <HelmetSEO
+        title={t('pagesHead.homepageTitle')}
+        content={t('pagesHead.homepageDescription')}
+      />
 
-      <div className='flex flex-col min-h-screen' data-testid='home'>
+      <div className='flex flex-col min-h-screen'>
         <Header>
           <SearchInput onChangeSearchTerm={setSearchTerm} />
         </Header>
@@ -84,9 +82,9 @@ function Home() {
                   :
                   (<>
                     <div className="flex flex-wrap gap-4 sm:gap-8 justify-between overflow-hidden items-center">
-                      <h2 className=' text-2xl font-semibold py-2 text-accent-light dark:text-neutral-400 lg:text-3xl gap-2 flex flex-wrap'>
+                      <h2 className=' text-3xl font-semibold py-2 text-neutral-500 dark:text-white lg:text-3xl gap-2 flex flex-wrap'>
                         {t('homepage.searchingFor')}:
-                        <span className='text-neutral-500 dark:text-white'>
+                        <span className='text-accent-light dark:text-focus-dark'>
                           {searchTerm}
                         </span>
                       </h2>
