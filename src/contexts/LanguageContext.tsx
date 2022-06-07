@@ -13,8 +13,9 @@ export const LanguageContext = createContext({} as LanguageContextData);
 export function LanguageProvider({ children }: { children: ReactNode; }) {
 
   const { i18n } = useTranslation();
+
   const [language, setLanguage] = useState<Language>(
-    (i18n.language === 'pt-BR' ? 'pt' : 'en') as Language
+    (i18n.language === ('en-US' || 'en') ? 'en' : 'pt') as Language
   );
 
   function changeLanguage(newLanguage: Language) {

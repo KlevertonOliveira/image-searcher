@@ -3,12 +3,20 @@ import { CheckIcon, ChevronDownIcon, GlobeAltIcon } from '@heroicons/react/solid
 import { useTranslation } from 'react-i18next';
 import { languages } from '../../../assets/data/languages';
 import { useLanguage } from '../../../hooks/useLanguage';
+import i18n from '../../../i18n';
 import { Language } from '../../../types/Language';
 
 function LanguageDropdownMenu() {
 
   const { language, changeLanguage } = useLanguage();
   const { t } = useTranslation();
+
+  console.log(i18n.language);
+
+
+  /* console.log('current language:', language);
+
+  console.log(navigator.language); */
 
   return (
     <Menu>
@@ -39,7 +47,7 @@ function LanguageDropdownMenu() {
                 >
                   <span className='text-xl'>{value.flag}</span>
                   <span className={`${language === value.code ? 'font-semibold' : 'font-medium'}`}>{value.name}</span>
-                  {(language === value.code) && <span><CheckIcon className='w-5 h-5' /></span>}
+                  {(language == key) && <span><CheckIcon className='w-5 h-5' /></span>}
                 </button>
               )}
             </Menu.Item>
