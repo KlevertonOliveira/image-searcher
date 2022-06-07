@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import HelmetSEO from '../components/HelmetSEO';
 
-export function NotFound() {
+export function PageNotFound() {
 
   const { t } = useTranslation();
 
@@ -46,4 +46,4 @@ export function NotFound() {
   );
 }
 
-export default NotFound;
+export default PageNotFound;
