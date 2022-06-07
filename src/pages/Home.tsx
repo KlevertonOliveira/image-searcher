@@ -73,7 +73,7 @@ function Home() {
         </Header>
         <main className='flex-1'>
           <section className='max-w-6xl mx-auto px-4 py-12'>
-            <div className='bg-white dark:bg-neutral-700 py-8 px-4 rounded-lg'>
+            <div className='bg-zinc-50 dark:bg-neutral-700 py-8 px-4 rounded-lg'>
               {isFetching ?
                 (<Loading />)
                 :
@@ -88,7 +88,7 @@ function Home() {
                           {searchTerm}
                         </span>
                       </h2>
-                      <div className='flex gap-4 flex-wrap p-2'>
+                      <div className='flex gap-4 flex-wrap py-2 pr-1'>
                         <OrderSelector orderOption={orderBy} onOrderOptionChange={setOrderBy} />
                         <ImageTypeSelector imageType={imageType} onChangeImageType={setImageType} />
                       </div>
