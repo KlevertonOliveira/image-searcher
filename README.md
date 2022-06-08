@@ -25,7 +25,7 @@ Pixabay Image Searcher is a personal project developed in order to put my skills
 
 The project consists of an image search system based on a text field to be filled in by the user and displays the results through a gallery of images separated by pages. Furthermore, for each image found, it is possible to visit a page that contains more details about the selected image.
 
-As a differential for the development of the application, I implemented the options for switching between themes (light and dark) and multi-language support (Portuguese and English)
+As a differential for the development of this application, I implemented the options for switching between themes (light and dark) and multi-language support (Portuguese and English)
 
 
 ---
@@ -40,11 +40,12 @@ As a differential for the development of the application, I implemented the opti
 * Not Found Page (404) - [Techs: React-Router-Dom];
 * Smooth scroll-to-top buttons for ease of navigation - [Techs: React-Scroll];
 * Theme switcher (light mode and dark mode) - [Techs: Tailwind CSS and React Context API];
-* Multi-language support (English and Portuguese) - [Techs: React-i18next and React Context API];
+* Multi-language support (English and Portuguese) - [Techs: i18next, React-i18next and React Context API];
 * Page entering animations - [Techs: Framer-Motion];
 * Unit and Integration Tests - [Techs: Jest and React Testing Library];
 * SEO support on every page - [Techs: React-Helmet-Async];
 * Accessible UI Components - [Techs: Tailwind CSS and Headless UI]
+* Fully responsive pages - [Techs: Tailwind CSS]
 
 
 ----
@@ -128,11 +129,12 @@ Como diferencial para o desenvolvimento dessa aplicação, implementei as opçõ
 * Página "Não Encontrada" (404) - [Techs: React-Router-Dom];
 * Botões de rolagem suave para o topo da página para facilidade de navegação - [Techs: React-Scroll];
 * Modificador de tema (modo claro e modo escuro) - [Techs: Tailwind CSS e React Context API];
-* Suporte multi-idioma (Inglês e Português) - [Techs: React-i18next e React Context API];
+* Suporte multi-idioma (Inglês e Português) - [Techs: i18next, React-i18next e React Context API];
 * Animações de entrada de página - [Techs: Framer-Motion];
 * Testes unitários e de integração - [Techs: Jest and React Testing Library];
 * Suporte SEO em todas as páginas - [Techs: React-Helmet-Async];
 * Acessibilidade em Componentes de Interface do Usuário - [Techs: Tailwind CSS e Headless UI]
+* Páginas totalmente responsivas - [Techs: Tailwind CSS]
 
 
 ----
