@@ -13,7 +13,8 @@
 
 ## :movie_camera: Project Demonstration | Demonstração do Projeto
 
-https://user-images.githubusercontent.com/71989630/158437229-246bcc00-679a-47f4-89be-c7170d2f67dc.mp4
+https://user-images.githubusercontent.com/71989630/172632281-3f40c66c-59a6-4f59-9735-b4cd36be5010.mp4
+
 
 ---
 
@@ -42,10 +43,10 @@ As a differential for the development of this application, I implemented the opt
 * Theme switcher (light mode and dark mode) - [Techs: Tailwind CSS and React Context API];
 * Multi-language support (English and Portuguese) - [Techs: i18next, React-i18next and React Context API];
 * Page entering animations - [Techs: Framer-Motion];
-* Unit and Integration Tests - [Techs: Jest and React Testing Library];
 * SEO support on every page - [Techs: React-Helmet-Async];
-* Accessible UI Components - [Techs: Tailwind CSS and Headless UI]
 * Fully responsive pages - [Techs: Tailwind CSS]
+* Accessible UI Components - [Techs: Tailwind CSS and Headless UI]
+* Unit and Integration Tests - [Techs: Jest and React Testing Library];
 
 
 ----
@@ -121,7 +122,7 @@ Como diferencial para o desenvolvimento dessa aplicação, implementei as opçõ
 
 ## :medal_military: Funcionalidades
 * Pesquisa de imagem baseada em entrada do usuário - [Techs: useDebounce Hook- React custom Hook];
-* Requisição à API Externa para obtenção de dados de imagens utilizando como parâmetro: termo de busca, categoria, opção de ordenação e número da página - [Techs: Axios e Pixabay API];
+* Requisição à API Externa para obtenção de dados de imagens utilizando como parâmetros: termo de busca, categoria, opção de ordenação e número da página - [Techs: Axios e Pixabay API];
 * Seletores "Categoria" e "Ordenar por" para filtragem de busca - [Techs: Pixabay API];
 * Seleção de página para filtragem de busca - [Techs: Pixabay API];
 * Rotas dinâmicas para criação de páginas de detalhes para cada imagem encontrada - [Techs: React-Router-Dom];
@@ -131,11 +132,10 @@ Como diferencial para o desenvolvimento dessa aplicação, implementei as opçõ
 * Modificador de tema (modo claro e modo escuro) - [Techs: Tailwind CSS e React Context API];
 * Suporte multi-idioma (Inglês e Português) - [Techs: i18next, React-i18next e React Context API];
 * Animações de entrada de página - [Techs: Framer-Motion];
-* Testes unitários e de integração - [Techs: Jest and React Testing Library];
 * Suporte SEO em todas as páginas - [Techs: React-Helmet-Async];
+* Responsividade em todas as páginas - [Techs: Tailwind CSS]
 * Acessibilidade em Componentes de Interface do Usuário - [Techs: Tailwind CSS e Headless UI]
-* Páginas totalmente responsivas - [Techs: Tailwind CSS]
-
+* Testes unitários e de integração - [Techs: Jest and React Testing Library];
 
 ----
 
