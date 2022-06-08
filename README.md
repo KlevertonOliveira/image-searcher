@@ -1,6 +1,24 @@
 # :framed_picture: Pixabay Image Searcher (English | Português)
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/KlevertonOliveira/image-searcher/blob/master/license)
 
+- Table of Contents | Sumário
+  - [:link: Links](#link-links)
+  - [:movie_camera: Project Demonstration | Demonstração do Projeto](#movie_camera-project-demonstration--demonstração-do-projeto)
+  - [:us: English](#us-english)
+    - [:mag_right: About the project](#mag_right-about-the-project)
+    - [:medal_military: Features](#medal_military-features)
+    - [:gear: Technologies Used](#gear-technologies-used)
+      - [Front-End](#front-end)
+    - [:file_folder: How to run the project](#file_folder-how-to-run-the-project)
+    - [:raising_hand_man: Author](#raising_hand_man-author)
+  - [:brazil: Português](#brazil-português)
+    - [:mag_right: Sobre o projeto](#mag_right-sobre-o-projeto)
+    - [:medal_military: Funcionalidades](#medal_military-funcionalidades)
+    - [:gear: Tecnologias Utilizadas](#gear-tecnologias-utilizadas)
+      - [Front-End](#front-end-1)
+    - [:file_folder: Como executar o projeto](#file_folder-como-executar-o-projeto)
+    - [:raising_hand_man: Autor](#raising_hand_man-autor)
+
 ---
 
 ## :link: Links
@@ -18,7 +36,7 @@ https://user-images.githubusercontent.com/71989630/172632281-3f40c66c-59a6-4f59-
 
 ---
 
-# English :us:
+# :us: English
 
 ## :mag_right: About the project
 
@@ -107,8 +125,7 @@ https://www.linkedin.com/in/klevertonoliveira/
 ---
 ---
 ---
-
-# Português :brazil:
+# :brazil: Português
 
 ## :mag_right: Sobre o projeto
 
