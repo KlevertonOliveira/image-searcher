@@ -1,7 +1,7 @@
 # :framed_picture: Pixabay Image Searcher (English | Português)
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/KlevertonOliveira/image-searcher/blob/master/license)
 
-- Table of Contents | Sumário
+- Table of Contents | Indíce
   - [:link: Links](#link-links)
   - [:movie_camera: Project Demonstration | Demonstração do Projeto](#movie_camera-project-demonstration--demonstração-do-projeto)
   - [:us: English](#us-english)
