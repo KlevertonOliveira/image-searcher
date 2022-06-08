@@ -132,7 +132,7 @@ Como diferencial para o desenvolvimento dessa aplicação, implementei as opçõ
 * Animações de entrada de página - [Techs: Framer-Motion];
 * Testes unitários e de integração - [Techs: Jest and React Testing Library];
 * Suporte SEO em todas as páginas - [Techs: React-Helmet-Async];
-* Acessibilidade em Componentes de Interface do Usuário [Techs: Tailwind CSS e Headless UI]
+* Acessibilidade em Componentes de Interface do Usuário - [Techs: Tailwind CSS e Headless UI]
 
 
 ----
