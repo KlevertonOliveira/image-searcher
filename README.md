@@ -44,6 +44,7 @@ As a differential for the development of the application, I implemented the opti
 * Page entering animations - [Techs: Framer-Motion];
 * Unit and Integration Tests - [Techs: Jest and React Testing Library];
 * SEO support on every page - [Techs: React-Helmet-Async];
+* Accessible UI Components - [Techs: Tailwind CSS and Headless UI]
 
 
 ----
@@ -56,6 +57,7 @@ As a differential for the development of the application, I implemented the opti
 - JavaScript ES6
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [HeadlessUI](https://headlessui.dev/)
 - [Axios](https://axios-http.com/docs/intro)
 - [Pixabay API](https://pixabay.com/api/docs/)
 - [Framer Motion](https://www.framer.com/motion/)
@@ -130,6 +132,7 @@ Como diferencial para o desenvolvimento dessa aplicação, implementei as opçõ
 * Animações de entrada de página - [Techs: Framer-Motion];
 * Testes unitários e de integração - [Techs: Jest and React Testing Library];
 * Suporte SEO em todas as páginas - [Techs: React-Helmet-Async];
+* Acessibilidade em Componentes de Interface do Usuário [Techs: Tailwind CSS e Headless UI]
 
 
 ----
@@ -142,6 +145,7 @@ Como diferencial para o desenvolvimento dessa aplicação, implementei as opçõ
 - JavaScript ES6
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [HeadlessUI](https://headlessui.dev/)
 - [Axios](https://axios-http.com/docs/intro)
 - [Pixabay API](https://pixabay.com/api/docs/)
 - [Framer Motion](https://www.framer.com/motion/)
