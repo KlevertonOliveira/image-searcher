@@ -3,20 +3,12 @@ import { CheckIcon, ChevronDownIcon, GlobeAltIcon } from '@heroicons/react/solid
 import { useTranslation } from 'react-i18next';
 import { languages } from '../../../assets/data/languages';
 import { useLanguage } from '../../../hooks/useLanguage';
-import i18n from '../../../i18n';
 import { Language } from '../../../types/Language';
 
 function LanguageDropdownMenu() {
 
   const { language, changeLanguage } = useLanguage();
   const { t } = useTranslation();
-
-  console.log(i18n.language);
-
-
-  /* console.log('current language:', language);
-
-  console.log(navigator.language); */
 
   return (
     <Menu>
